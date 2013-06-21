@@ -18,7 +18,11 @@ alias nme='haxelib run nme'
 function install_titanium_module() { cp $1 ~/Library/Application\ Support/Titanium/ ;}
 
 # ======== GIT ========
+# https://github.com/defunkt/hub
+# hub create = erzeuge github repo vom aktuellen repo
+# hub browse = oeffne repo auf github
 alias hub='~/bin/hub'
+
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
 alias gd='git diff'
 alias gad='git add .'
@@ -38,26 +42,6 @@ function gc {
   git commit -m "$*"
 }
 
-
-
-
-
-function mergeall() { eval 'git checkout stable; git merge $1; git checkout master; git merge $1;'; }
-
-if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    c_reset=`tput sgr0`
-    c_user=`tput setaf 2; tput bold`
-    c_path=`tput setaf 4; tput bold`
-    c_git_clean=`tput setaf 2`
-    c_git_dirty=`tput setaf 1`
-else
-    c_reset=
-    c_user=
-    c_path=
-    c_git_clean=
-    c_git_dirty=
-fi
-
 function parse_git_branch {
     if git diff --quiet 2>/dev/null >&2; then
         git_color="${c_git_clean}"
@@ -70,7 +54,6 @@ function parse_git_branch {
 }
 
 PS1="\[\e[1;31m\]________________________________________________________________________________________\n\[\e[1;33m\]| \W @ \h (\u) \$(parse_git_branch)\n| => \[\e[0m\]"
-
 
 # ======== Rails ========
 alias r='rails'
