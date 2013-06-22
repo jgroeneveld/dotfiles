@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/dotfiles/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -40,6 +40,14 @@ ZSH_THEME="jgroeneveld"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
 
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+
 source $ZSH/oh-my-zsh.sh
 
 source $HOME/dotfiles/shared_shell
+
+function most_used_commands {
+  cat ~/.zsh_history|cut -d ';' -f 2- 2>/dev/null| awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head
+}
