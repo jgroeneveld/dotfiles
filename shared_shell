@@ -51,6 +51,11 @@ alias pong='cd /Volumes/Plutex/pong'
 alias kong='cd /Volumes/Plutex/kong'
 
 
+# ======= DYNPORT =======
+
+alias dphrase='cd ~/projects/dynport/phrase'
+alias pphrase='cd ~/projects/phrase/phrase'
+
 
 # ====== zeug
 
@@ -81,8 +86,7 @@ export PATH=$PATH:"$ANDROID_SDK/tools"
 
 
 export PATH=$PATH:"/usr/texbin"
-
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+export SOLR_HOME='/usr/local/Cellar/solr/4.3.1/libexec/example'
 
 # ======== RVM ========
 # at the end
