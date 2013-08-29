@@ -95,6 +95,3 @@ export PATH=$PATH:"/usr/texbin"
 export PATH=$PATH:~/bin
 export SOLR_HOME='/usr/local/Cellar/solr/4.3.1/libexec/example'
 
-# ======== RVM ========
-# at the end
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
