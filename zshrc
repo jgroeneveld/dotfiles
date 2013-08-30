@@ -53,3 +53,5 @@ function most_used_commands {
 }
 
 setopt no_share_history
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

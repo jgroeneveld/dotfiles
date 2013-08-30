@@ -78,6 +78,15 @@ phpserver() {
     /usr/local/opt/php54/bin/php -S localhost:$1
 }
 
+export EDITOR=subl
+
+# ======== RUBY ========
+export RUBY_HEAP_MIN_SLOTS=2000000
+export RUBY_HEAP_SLOTS_INCREMENT=500000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=70000000
+export RUBY_HEAP_FREE_MIN=100000
+export RUBY_FREE_MIN=100000
 
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
@@ -94,6 +103,7 @@ export PATH=$PATH:"$ANDROID_SDK/tools"
 export PATH=$PATH:"/usr/texbin"
 export PATH=$PATH:~/bin
 export SOLR_HOME='/usr/local/Cellar/solr/4.3.1/libexec/example'
+export SOLR_SCHEMA_DIR='/usr/local/Cellar/solr/4.3.1/libexec/example/solr'
 
 # ======== RVM ========
 # at the end
