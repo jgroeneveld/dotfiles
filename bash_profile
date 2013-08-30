@@ -22,3 +22,7 @@ PS1="\[\e[1;31m\]_______________________________________________________________
 
 
 source $HOME/dotfiles/shared_shell
+
+# ======== RVM ========
+# at the end
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

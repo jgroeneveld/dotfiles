@@ -1,0 +1,3 @@
+" clear highlight after search with esc
+nnoremap <esc> :noh<return><esc>
+
