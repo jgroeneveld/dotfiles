@@ -30,6 +30,7 @@ command OpenFolder !open %:p:h
 
 " disabling auto insert of linebreaks when entering text
 set textwidth=0 wrapmargin=0
+set clipboard=unnamed
 
 " ctrp ignores for rails
 set wildignore+=*/tmp/*
