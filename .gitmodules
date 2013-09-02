@@ -1,0 +1,3 @@
+[submodule "janus/vim-multiple-cursors"]
+	path = janus/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
