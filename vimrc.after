@@ -20,3 +20,6 @@ endif
 
 command OpenFolder !open %:p:h
 
+" disabling auto insert of linebreaks when entering text
+set textwidth=0 wrapmargin=0
+
