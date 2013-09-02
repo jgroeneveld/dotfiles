@@ -1,3 +1,13 @@
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
+colors wombat
+
+" clear highlight after search with esc
+nnoremap <esc> :noh<return><esc>
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
