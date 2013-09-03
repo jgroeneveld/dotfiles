@@ -2,3 +2,6 @@
 	path = janus/vim-multiple-cursors
   url = https://github.com/terryma/vim-multiple-cursors.git
   ignore = dirty
+[submodule "janus/vim-rails"]
+	path = janus/vim-rails
+	url = https://github.com/tpope/vim-rails.git
