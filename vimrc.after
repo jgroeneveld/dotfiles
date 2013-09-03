@@ -1,15 +1,23 @@
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
-colors wombat
+colors wombat256
 
 " clear highlight after search with esc
 " nnoremap <esc> :noh<return><esc>
 
+" easier window traversal
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+"easier start/end of line
+nmap <S-h> 0
+nmap <S-l> $
+
+" remap undo
+nmap U <C-R>
 
 if has('autocmd')
   if has('spell')
@@ -50,4 +58,13 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python,markdown autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" setup :make to use rspec etc
+" http://code.nevercraft.net/blog/2013/running-rspec-in-vim.html
+autocmd FileType ruby
+  \ if expand("%") =~# '_spec\.rb$' |
+  \   compiler rspec | setl makeprg=rspec\ $*|
+  \ else |
+  \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
+  \ endif
 
