@@ -13,8 +13,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 "easier start/end of line
-nmap <S-h> 0
-nmap <S-l> $
+nmap H 0
+nmap L $
 
 " remap undo
 nmap U <C-R>
