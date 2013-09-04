@@ -1,10 +1,18 @@
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
-colors wombat256
+if has("gui_macvim")
+  colors macvim
+else
+  colors wombat256
+endif
 
 " clear highlight after search with esc
 " nnoremap <esc> :noh<return><esc>
+
+" replace selected content in visual mode with yanked content
+" http://stackoverflow.com/questions/54255/in-vim-is-there-a-way-to-delete-without-putting-text-in-the-register
+vmap r "_dP
 
 " easier window traversal
 map <C-h> <C-w>h
