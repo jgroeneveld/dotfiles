@@ -2,11 +2,16 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 set scrolloff=5
 
-if has("gui_macvim")
-  colors macvim
-else
-  colors wombat256
-endif
+"if has("gui_macvim")
+  "colors macvim
+"else
+  "colors wombat256
+"endif
+colors lucius
+LuciusWhite
+
+set t_Co=256
+set mouse=a
 
 " clear highlight after search with esc
 " nnoremap <esc> :noh<return><esc>

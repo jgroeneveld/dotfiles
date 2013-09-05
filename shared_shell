@@ -40,8 +40,6 @@ function gc {
   git commit 
 }
 
-
-
 # ======== Rails ========
 alias r='rails'
 alias rc='rails c'
@@ -58,9 +56,11 @@ alias kong='cd /Volumes/Plutex/kong'
 
 
 # ======= DYNPORT =======
-
 alias dphrase='cd ~/projects/dynport/phrase'
 alias pphrase='cd ~/projects/phrase/phrase'
+
+# ======== Folders ========
+alias dotfiles='cd ~/dotfiles'
 
 
 # ====== zeug
