@@ -1,2 +1,5 @@
 --type-set=haml=.haml
 
+--type-add=css=.sass,.scss
+--type-set=scss=.sass,.scss
+--type-set=sass=.sass,.scss
