@@ -26,6 +26,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" close buffer but keep window
+nnoremap <leader>c :bp\|bd #<CR>
+
 "easier start/end of line
 nmap H 0
 nmap L $
