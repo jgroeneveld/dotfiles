@@ -5,3 +5,6 @@
 [submodule "janus/vim-rails"]
 	path = janus/vim-rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule "janus/ctrlp-cmatcher"]
+	path = janus/ctrlp-cmatcher
+	url = https://github.com/JazzCore/ctrlp-cmatcher.git

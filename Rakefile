@@ -7,7 +7,7 @@ task :install do
   replace_all = false
 
   files = Dir['*'].reject do |file|
-    %w[Rakefile README LICENSE id_dsa.pub shared_shell other_symlinks].include? file
+    %w[Rakefile README LICENSE id_dsa.pub shared_shell other_symlinks vim.d].include? file
   end
 
   files.each do |file|
