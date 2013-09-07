@@ -1,3 +1,5 @@
+source ~/dotfiles/vimrc.d/vundle.vim
+
 " load all files in vimrc.d
 for f in split(glob('~/dotfiles/vimrc.d/*.vim'), '\n')
   exe 'source' f

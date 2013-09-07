@@ -10,7 +10,7 @@ let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
 
 " disabling auto insert of linebreaks when entering text
 set textwidth=0 wrapmargin=0
-"set clipboard=unnamed
+set clipboard=unnamed
 
 " ctrp ignores for rails
 set wildignore+=*/tmp/*
