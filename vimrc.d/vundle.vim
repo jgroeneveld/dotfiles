@@ -12,6 +12,7 @@
 
 Bundle 'tpope/vim-rails'
 Bundle 'JazzCore/ctrlp-cmatcher'
+Bundle 'tpope/vim-surround'
 
  filetype plugin indent on     " required!
  "
