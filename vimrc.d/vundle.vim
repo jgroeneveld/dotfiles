@@ -13,6 +13,8 @@
 Bundle 'tpope/vim-rails'
 Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+"Bundle 'vim-scripts/kwbdi.vim'
 
  filetype plugin indent on     " required!
  "
