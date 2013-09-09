@@ -22,6 +22,9 @@ set clipboard=unnamed
 set splitright
 set splitbelow
 
+" reload files when changed on disc
+set autoread
+
 " ctrp ignores for rails
 set wildignore+=*/tmp/*
 set wildignore+=*/log/*
