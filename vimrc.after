@@ -1,3 +1,6 @@
+" removing janus mappings
+:unmap <leader>tw
+
 source ~/dotfiles/vimrc.d/vundle.vim
 
 " load all files in vimrc.d

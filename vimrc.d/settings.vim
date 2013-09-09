@@ -33,3 +33,4 @@ set wildignore+=*/vendor/*
 " for phraseapp in specific
 set wildignore+=*/solr/*
 set wildignore+=*/.rsync_cache/*
+
