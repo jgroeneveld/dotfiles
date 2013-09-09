@@ -18,6 +18,10 @@ set nolist
 
 set clipboard=unnamed
 
+" more natural splitting
+set splitright
+set splitbelow
+
 " ctrp ignores for rails
 set wildignore+=*/tmp/*
 set wildignore+=*/log/*
