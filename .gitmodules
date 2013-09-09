@@ -1,3 +1,5 @@
 [submodule "janus/vundle"]
-	path = janus/vundle
+  path = janus/vundle
+  url = https://github.com/gmarik/vundle.git
   ignore = dirty
+
