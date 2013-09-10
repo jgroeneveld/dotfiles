@@ -102,7 +102,6 @@ export PATH=$PATH:"$ANDROID_SDK/tools"
 
 export PATH=$PATH:"/usr/texbin"
 export PATH=$PATH:~/bin
-export SOLR_HOME='/usr/local/Cellar/solr/4.3.1/libexec/example'
-#export SOLR_SCHEMA_DIR='/usr/local/Cellar/solr/4.3.1/libexec/example/solr'
+export SOLR_HOME='/usr/local/Cellar/solr36/3.6.2/libexec/example'
 
 export GOPATH=$HOME/go
