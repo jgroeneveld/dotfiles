@@ -1,5 +1,6 @@
-colors lucius
-LuciusWhite
+colors wombat256
+" colors lucius
+" LuciusWhite
 set t_Co=256
 
 set mouse=a
