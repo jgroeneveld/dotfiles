@@ -1,7 +1,8 @@
-colors wombat256
+set t_Co=256
+
+colors wombat256mod
 " colors lucius
 " LuciusWhite
-set t_Co=256
 
 set mouse=a
 set scrolloff=5
@@ -22,6 +23,11 @@ set clipboard=unnamed
 " more natural splitting
 set splitright
 set splitbelow
+
+" set zsh env vars
+if has("gui_macvim")
+  set shell=zsh\ -i
+endif
 
 " reload files when changed on disc
 set autoread
