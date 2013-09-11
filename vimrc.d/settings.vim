@@ -1,6 +1,6 @@
 set t_Co=256
 
-colors wombat256mod
+colors wombat256
 " colors lucius
 " LuciusWhite
 
