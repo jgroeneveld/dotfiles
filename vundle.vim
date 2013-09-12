@@ -1,4 +1,5 @@
  set nocompatible               " be iMproved
+ filetype on "because if it is already off, turning it off causes bad exit codes
  filetype off                   " required!
 
  set rtp+=~/dotfiles/janus/vundle
@@ -16,7 +17,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'dgryski/vim-godef'
-"Bundle 'vim-scripts/kwbdi.vim'
+Bundle 'SearchHighlighting'
 
  filetype plugin indent on     " required!
  "
@@ -28,7 +29,3 @@ Bundle 'dgryski/vim-godef'
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
- "
-source ~/.vim/bundle/vim-rspec/plugin/rspec.vim
-source ~/.vim/bundle/vim-godef/plugin/godef.vim
-
