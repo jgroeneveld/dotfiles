@@ -15,6 +15,7 @@ Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'dgryski/vim-godef'
 "Bundle 'vim-scripts/kwbdi.vim'
 
  filetype plugin indent on     " required!
@@ -29,3 +30,5 @@ Bundle 'thoughtbot/vim-rspec'
  " NOTE: comments after Bundle command are not allowed..
  "
 source ~/.vim/bundle/vim-rspec/plugin/rspec.vim
+source ~/.vim/bundle/vim-godef/plugin/godef.vim
+

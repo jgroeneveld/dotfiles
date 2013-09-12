@@ -105,3 +105,4 @@ export PATH=$PATH:~/bin
 export SOLR_HOME='/usr/local/Cellar/solr36/3.6.2/libexec/example'
 
 export GOPATH=$HOME/go
+export PATH=$PATH:~/go/bin
