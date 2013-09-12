@@ -32,6 +32,10 @@ endif
 " reload files when changed on disc
 set autoread
 
+" better tab completion for commands/filenames etc
+set wildmode=longest,list,full
+set wildmenu
+
 " ctrp ignores for rails
 set wildignore+=*/tmp/*
 set wildignore+=*/log/*
