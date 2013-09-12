@@ -3,6 +3,7 @@ set t_Co=256
 " colors wombat256
 colors lucius
 LuciusDark
+highlight CursorLineNr guifg=#ffff00 guibg=#666666
 
 set mouse=a
 set scrolloff=5
