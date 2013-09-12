@@ -11,6 +11,9 @@ let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
 let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
 
+" use the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " disabling auto insert of linebreaks when entering text
 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
 set textwidth=0 wrapmargin=0
