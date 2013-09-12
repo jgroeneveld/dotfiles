@@ -37,12 +37,15 @@ set autoread
 set wildmode=longest,list,full
 set wildmenu
 
-" ctrp ignores for rails
-set wildignore+=*/tmp/*
+" ctrp ignores
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif,*.gz,*.swf
 set wildignore+=*/log/*
 set wildignore+=*/vendor/*
+set wildignore+=*/spec/cassettes/*
 
 " for phraseapp in specific
 set wildignore+=*/solr/*
 set wildignore+=*/.rsync_cache/*
+set wildignore+=*/public/assets/*
+set wildignore+=*/public/uploads/*
 
