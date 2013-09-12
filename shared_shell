@@ -60,7 +60,7 @@ alias dphrase='cd ~/projects/dynport/phrase'
 alias pphrase='cd ~/projects/phrase/phrase'
 
 # ======== Folders ========
-alias dotfiles='cd ~/dotfiles'
+alias df='cd ~/dotfiles'
 
 
 # ====== zeug

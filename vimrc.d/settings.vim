@@ -1,8 +1,8 @@
 set t_Co=256
 
-colors wombat256
-" colors lucius
-" LuciusWhite
+" colors wombat256
+colors lucius
+LuciusDark
 
 set mouse=a
 set scrolloff=5
