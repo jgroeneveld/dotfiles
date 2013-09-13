@@ -6,7 +6,7 @@ LuciusDark
 highlight CursorLineNr guifg=#ffff00 guibg=#666666
 
 set mouse=a
-set scrolloff=5
+set scrolloff=3
 let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
 let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
