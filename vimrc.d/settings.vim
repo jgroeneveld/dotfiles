@@ -45,10 +45,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*.png,*.jpg,*.gif,*.gz,*.swf
 set wildignore+=*/log/*
 set wildignore+=*/vendor/*
 set wildignore+=*/spec/cassettes/*
-
-" for phraseapp in specific
-set wildignore+=*/solr/*
-set wildignore+=*/.rsync_cache/*
 set wildignore+=*/public/assets/*
 set wildignore+=*/public/uploads/*
+
+" for phraseapp in specific
+set wildignore+=/Users/dynport/projects/dynport/phrase/solr/*
+set wildignore+=*/.rsync_cache/*
 
