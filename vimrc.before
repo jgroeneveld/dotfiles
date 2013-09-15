@@ -1,6 +1,0 @@
-let mapleader = ","
-
-"call janus#disable_plugin('nerdtree')
-call janus#disable_plugin('vroom')
-
-source ~/dotfiles/vundle.vim

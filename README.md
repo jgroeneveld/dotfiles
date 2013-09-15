@@ -1,7 +1,9 @@
 dotfiles
 ========
-my dotfiles.
+my dotfiles
 
-install script and some aliases shamelessly stolen from https://github.com/r00k/dotfiles
+./linker.rb with ruby installed
 
-other_symlinks are not installed via rake 
+everything in ./home will be linked as $HOME/.file
+other links are defined at the bottom of linker.rb
+

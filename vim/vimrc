@@ -1,0 +1,214 @@
+set nocompatible                  " Must come first because it changes other options.
+source ~/.vim/bundle.vim
+
+
+let mapleader = ","
+
+syntax enable                     " Turn on syntax highlighting.
+filetype plugin indent on         " Turn on file type detection.
+
+set showcmd                       " Display incomplete commands.
+set showmode                      " Display the mode you're in.
+
+set backspace=indent,eol,start    " Intuitive backspacing.
+set whichwrap+=<,>,h,l,[,]        " Automatically move to next line at EOL
+
+set mouse=a                       " Enable the mouse
+
+set hidden                        " Handle multiple buffers better.
+
+set wildmenu                      " Enhanced command line completion.
+set wildmode=list:longest,full    " Complete files like a shell.
+
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
+
+set hlsearch                      " Highlight matches.
+set incsearch                     " Highlight matches as you type.
+
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital
+set gdefault                      " Set global as default for substitute
+
+set nowrap                          " Turn off line wrapping.
+set linebreak
+
+set scrolloff=3                   " Show 3 lines of context around the cursor.
+
+set title                         " Set the terminal's title
+
+set visualbell                    " No beeping.
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set backupdir^=~/.vim/_backup//   " where to put backup files.
+set directory^=~/.vim/_temp//     " where to put swap files
+
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+
+set splitright                    " More natural splitting
+set splitbelow
+
+set laststatus=2                  " Show the status line all the time
+" Useful status information at bottom of screen
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+set autoread                      " Reload files when changed on disc
+
+set list
+set listchars=""                  " Reset the listchars
+set listchars=tab:>-              " a tab should display as ">-----"
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " Off screen indicators
+set listchars+=precedes:<
+
+set t_Co=256
+colors lucius
+LuciusDark
+
+" CtrlP settings
+let g:ctrlp_max_files=10000
+let g:ctrlp_max_depth=40
+let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
+
+
+" ==================== Wild settings ====================
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+set wildignore+=*.so,*.pdf,*.png,*.jpg,*.gif,*.swf
+set wildignore+=*/tmp/*
+set wildignore+=*/log/*
+set wildignore+=*/vendor/*
+set wildignore+=*/spec/cassettes/*
+set wildignore+=*/public/assets/*
+set wildignore+=*/public/uploads/*
+
+" for phraseapp in specific
+set wildignore+=/Users/dynport/projects/dynport/phrase/solr/*
+set wildignore+=*/.rsync_cache/*
+
+" use the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" disabling auto insert of linebreaks when entering text
+" http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+set textwidth=0 wrapmargin=0
+
+
+
+" ==================== Commands ====================
+command OpenFolder !open %:p:h
+
+
+" ==================== Mappings ====================
+" expand directory of current active file
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" easier window traversal
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Remap undo
+nmap U <C-R>
+
+" Make Y consistent with D,C etc
+nnoremap Y y$
+
+" remap # to * for use with SearchHighlighting script
+nmap # *
+vmap # *
+
+" vim-rspec
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+" NERDTree
+nnoremap <leader>n :NERDTreeToggle<CR>
+" dont replace netrw, ignore open nerdtree when closing vim
+let NERDTreeHijackNetrw = 0
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" ==================== Git commit ====================
+" activates spelling correction and enters insert
+" mode when commiting
+if has('autocmd')
+  if has('spell')
+    au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+  endif
+  au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
+endif
+
+
+" ==================== Highlight current line ====================
+set cul
+" only on the active window
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
+
+
+" ==================== Remove trailing whitespaces on save ====================
+command! KillWhitespace :normal :%s/\s\+$//eg<cr><c-o><cr>
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,markdown,vim autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+
+" ==================== Remember last location ====================
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
+
+
+" ==================== Filetypes ====================
+" In Makefiles, use real tabs, not tabs expanded to spaces
+au FileType make setlocal noexpandtab
+
+" This actually might be confusing, but the plugin +ruby+ already does
+" this, so we want to do it only if the plugin +ruby+ is disabled for
+" some reason
+" if janus#is_plugin_disabled("ruby")
+  " Set the Ruby filetype for a number of common Ruby files without .rb
+  " au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
+" endif
+
+" Make sure all markdown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+au FileType markdown call s:setupWrapping()
+
+" Treat JSON files like JavaScript
+au BufNewFile,BufRead *.json set ft=javascript
+
+" make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
+
