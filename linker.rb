@@ -4,8 +4,13 @@
 # create folders
 system 'mkdir -p ~/.vim/_temp'
 system 'mkdir -p ~/.vim/_backup'
+system 'mkdir -p ~/.vim/bundle'
 
-
+# get vundle if not there
+unless File.exists?(File.expand_path('~/.vim/bundle/vundle'))
+  puts "Cloning Vundle"
+  system 'git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle'
+end
 
 
 
@@ -97,4 +102,7 @@ linker.link_hash({
   "vim/vimrc" => "~/.vimrc",
   "vim/gvimrc" => "~/.gvimrc"
 })
+
+
+puts "\n\nDone. Now execute :BundleInstall in vim"
 
