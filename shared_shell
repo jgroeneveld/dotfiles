@@ -86,6 +86,7 @@ phpserver() {
 
 #export EDITOR=subl
 #export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+export EDITOR='mvim -v'
 
 # ======== RUBY ========
 export RUBY_HEAP_MIN_SLOTS=500000
