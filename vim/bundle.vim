@@ -26,7 +26,6 @@ Bundle 'ZoomWin'
 Bundle 'rking/ag.vim'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'sickill/vim-pasta'
-Bundle 'Valloric/YouCompleteMe'
   " snimpate dependencies
   Bundle 'MarcWeber/vim-addon-mw-utils'
   Bundle 'tomtom/tlib_vim'
