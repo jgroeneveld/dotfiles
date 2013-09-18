@@ -34,6 +34,7 @@ Bundle 'honza/vim-snippets'
 
 " ====== Ruby / Rails
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-endwise'
 
