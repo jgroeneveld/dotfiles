@@ -2,3 +2,5 @@
 .svn
 log/
 db/*.sqlite3
+.agignore
+.vimrc.local
