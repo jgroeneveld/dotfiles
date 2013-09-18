@@ -65,8 +65,14 @@ set listchars+=extends:>          " Off screen indicators
 set listchars+=precedes:<
 
 set t_Co=256
-colors lucius
-LuciusDark
+if has("gui_running")
+  set background=light
+  colors solarized
+  "highlight CursorLineNr guifg=#ffff00 guibg=#666666
+else
+  colors lucius
+  LuciusDark
+endif
 
 " CtrlP settings
 let g:ctrlp_max_files=10000
