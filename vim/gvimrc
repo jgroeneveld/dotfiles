@@ -7,6 +7,7 @@ set lines=27 columns=92             " Window dimensions.
 
 
 set guioptions-=r                   " Don't show right scrollbar
+set guioptions-=L
 
 set shell=zsh\ -i                   " Use zsh env vars
 
