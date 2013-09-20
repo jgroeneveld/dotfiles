@@ -37,6 +37,8 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-endwise'
+Bundle 'textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " ====== Go
 Bundle 'dgryski/vim-godef'
