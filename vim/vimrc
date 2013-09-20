@@ -118,7 +118,7 @@ set textwidth=0 wrapmargin=0
 
 
 " ==================== Commands ====================
-command OpenFolder !open %:p:h
+command! OpenFolder !open %:p:h
 
 
 " ==================== Mappings ====================
@@ -178,13 +178,13 @@ augroup END
 
 
 " ==================== Remove trailing whitespaces on save ====================
-command! KillWhitespace :normal :%s/\s\+$//eg<cr><c-o><cr>
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
 endfun
+command! KillWhitespace call <SID>StripTrailingWhitespaces()
 
 autocmd FileType c,cpp,java,php,ruby,python,markdown,vim autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
