@@ -31,6 +31,7 @@ Bundle 'sickill/vim-pasta'
   Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'bling/vim-airline'
 
 " ====== Ruby / Rails
 Bundle 'tpope/vim-rails'

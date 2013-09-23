@@ -94,6 +94,9 @@ let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
 let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
 
+" Airline settings
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
 " ==================== Wild settings ====================
 " Disable output and VCS files
@@ -147,8 +150,13 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " faster movin
-nnoremap ∆ 4j
-nnoremap ˚ 4k
+if has("gui_running")
+  nnoremap ∆ 4j
+  nnoremap ˚ 4k
+else
+  nnoremap <A-j> 4j
+  nnoremap <A-k> 4k
+endif
 
 " Remap undo
 nmap U <C-R>
