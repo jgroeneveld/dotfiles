@@ -5,10 +5,6 @@ set encoding=utf-8                  " Use UTF-8 everywhere.
 set guioptions-=T                   " Hide toolbar.
 set lines=27 columns=92             " Window dimensions.
 
-
-set guioptions-=r                   " Don't show right scrollbar
-set guioptions-=L
-
 set shell=zsh\ -i                   " Use zsh env vars
 
 autocmd VimResized * wincmd =       " Automatically resize windows
