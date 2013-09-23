@@ -34,6 +34,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-dispatch'
 Bundle 'rosenfeld/conque-term'
+Bundle 'jgdavey/tslime.vim'
 
 " ====== Ruby / Rails
 Bundle 'tpope/vim-rails'

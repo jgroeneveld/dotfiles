@@ -157,13 +157,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " faster movin
-if has("gui_running")
-  nnoremap ∆ 4j
-  nnoremap ˚ 4k
-else
-  nnoremap <A-j> 4j
-  nnoremap <A-k> 4k
-endif
+nnoremap ∆ 4j
+nnoremap ˚ 4k
 
 " Remap undo
 nmap U <C-R>
