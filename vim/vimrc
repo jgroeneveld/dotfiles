@@ -4,14 +4,14 @@ source ~/.vim/bundle.vim
 runtime macros/matchit.vim
 
 " ======================= training mode
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
 " ======================
 
 let mapleader = ","
@@ -27,8 +27,7 @@ set whichwrap+=<,>,h,l,[,]        " Automatically move to next line at EOL
 
 set mouse=a                       " Enable the mouse
 
-"set hidden                        " Handle multiple buffers better.
-set nohidden                      " force save when buffer is edited
+set hidden                        " Handle multiple buffers better.
 
 set lazyredraw                    " Dont update the display while executing macros
 

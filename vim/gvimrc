@@ -8,3 +8,6 @@ set lines=27 columns=92             " Window dimensions.
 set shell=zsh\ -i                   " Use zsh env vars
 
 autocmd VimResized * wincmd =       " Automatically resize windows
+
+nnoremap <M-DOWN> 4j
+nnoremap <M-UP> 4k
