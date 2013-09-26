@@ -17,6 +17,8 @@ runtime macros/matchit.vim
 let mapleader = ","
 
 syntax enable                     " Turn on syntax highlighting.
+syntax sync minlines=256          " maybe more speed?
+
 filetype plugin indent on         " Turn on file type detection.
 set synmaxcol=120                 " disable highlighting long lines
 
@@ -194,17 +196,6 @@ if has('autocmd')
   endif
   au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggi', 't')
 endif
-
-
-" ==================== Highlight current line ====================
-set cul
-" only on the active window
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
-augroup END
-
 
 " ==================== Remove trailing whitespaces on save ====================
 fun! <SID>StripTrailingWhitespaces()
