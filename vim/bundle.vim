@@ -35,6 +35,7 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-dispatch'
 Bundle 'rosenfeld/conque-term'
 Bundle 'jgdavey/tslime.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " ====== Ruby / Rails
 Bundle 'tpope/vim-rails'
