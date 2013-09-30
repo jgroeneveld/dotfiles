@@ -3,6 +3,8 @@ set guifont=Source\ Code\ Pro\ For\ Powerline:h14   " Font family and font size.
 set antialias                       " MacVim: smooth fonts.
 set encoding=utf-8                  " Use UTF-8 everywhere.
 set guioptions-=T                   " Hide toolbar.
+set guioptions-=r
+set guioptions-=L                   " hide scrollbars
 set lines=40 columns=125            " Window dimensions.
 
 set shell=zsh\ -i                   " Use zsh env vars
