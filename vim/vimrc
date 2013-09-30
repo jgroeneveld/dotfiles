@@ -83,12 +83,16 @@ set listchars+=precedes:<
 
 set t_Co=256
 if has("gui_running")
-  set background=light
-  colors solarized
+  "set background=light
+  "colors solarized
   "highlight CursorLineNr guifg=#ffff00 guibg=#666666
+  colors lucius
+  LuciusDark
+  let g:airline_theme='wombat'
 else
   colors lucius
   LuciusDark
+  let g:airline_theme='wombat'
 endif
 
 " CtrlP settings
