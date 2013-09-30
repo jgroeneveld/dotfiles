@@ -50,8 +50,7 @@ set gdefault                      " Set global as default for substitute
 set nowrap                          " Turn off line wrapping.
 set linebreak
 
-"set scrolloff=3                   " Show 3 lines of context around the cursor.
-set scrolloff=999                 " keep context
+set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
