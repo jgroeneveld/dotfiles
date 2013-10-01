@@ -20,7 +20,7 @@ syntax enable                     " Turn on syntax highlighting.
 syntax sync minlines=256          " maybe more speed?
 
 filetype plugin indent on         " Turn on file type detection.
-set synmaxcol=120                 " disable highlighting long lines
+set synmaxcol=200                 " disable highlighting long lines
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
