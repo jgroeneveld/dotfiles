@@ -42,10 +42,13 @@ function g {
   fi
 }
 
-# Allows commit message without typing quotes (can't have quotes in the commit msg though).
 function gc {
-  #git commit -m "$*"
-  git commit 
+  if [[ $# > 0 ]]; then
+    echo "[#$1] " > /tmp/git_commit_template
+    git commit -t /tmp/git_commit_template
+  else
+    git commit
+  fi
 }
 
 # ======== Rails ========
