@@ -191,6 +191,9 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+nnoremap <C-DOWN> :cn<CR>
+nnoremap <C-UP> :cp<CR>
+
 " ==================== Git commit ====================
 " activates spelling correction and enters insert
 " mode when commiting
