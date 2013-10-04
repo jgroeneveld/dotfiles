@@ -245,3 +245,4 @@ if filereadable(".vimrc.local")
   so .vimrc.local
 endif
 
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 listchars+=tab:\ \ ,trail:. noexpandtab
