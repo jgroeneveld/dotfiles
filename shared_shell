@@ -69,6 +69,7 @@ alias kong='cd /Volumes/Plutex/kong'
 # ======= DYNPORT =======
 alias dphrase='cd ~/projects/dynport/phrase'
 alias pphrase='cd ~/projects/phrase/phrase'
+alias ffandroid='cd ~/projects/dynport/ffandroid'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'

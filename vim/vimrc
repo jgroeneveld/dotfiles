@@ -86,12 +86,12 @@ set listchars=tab:▸\ ,trail:.,extends:❯,precedes:❮
 
 set t_Co=256
 if has("gui_running")
-  "set background=light
-  "colors solarized
+  set background=light
+  colors solarized
   "highlight CursorLineNr guifg=#ffff00 guibg=#666666
-  colors lucius
-  LuciusDark
-  let g:airline_theme='wombat'
+  "colors lucius
+  "LuciusDark
+  "let g:airline_theme='wombat'
 else
   colors lucius
   LuciusDark
@@ -245,4 +245,4 @@ if filereadable(".vimrc.local")
   so .vimrc.local
 endif
 
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 listchars+=tab:\ \ ,trail:. noexpandtab
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 noexpandtab nolist
