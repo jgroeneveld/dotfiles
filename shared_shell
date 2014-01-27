@@ -67,9 +67,9 @@ alias kong='cd /Volumes/Plutex/kong'
 
 
 # ======= DYNPORT =======
-alias dphrase='cd ~/projects/dynport/phrase'
-alias pphrase='cd ~/projects/phrase/phrase'
-alias ffandroid='cd ~/projects/dynport/ffandroid'
+alias ffandroid='cd ~/Dropbox/projects/1414/ffandroid'
+alias ffiphone='cd ~/Dropbox/projects/1414/ffiphone'
+alias ff='cd ~/Dropbox/projects/1414/ff'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'
@@ -120,3 +120,6 @@ export PATH=$PATH:$HOME/bin
 
 export GOPATH=$HOME/go
 export PATH=$PATH:~/go/bin
+
+# rbenv
+eval "$(rbenv init -)"
