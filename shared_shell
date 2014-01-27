@@ -94,13 +94,6 @@ phpserver() {
 #export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 export EDITOR='mvim -v'
 
-# ======== RUBY ========
-export RUBY_HEAP_MIN_SLOTS=500000
-export RUBY_HEAP_SLOTS_INCREMENT=500000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=100000000
-export RUBY_HEAP_FREE_MIN=500000
-
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
 export PATH="$PATH:/usr/local/share/npm/bin"
