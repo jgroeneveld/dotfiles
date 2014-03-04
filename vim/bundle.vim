@@ -28,15 +28,17 @@ Bundle 'ZoomWin'
 Bundle 'rking/ag.vim'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'sickill/vim-pasta'
+Bundle 'garbas/vim-snipmate'
   " snimpate dependencies
   Bundle 'MarcWeber/vim-addon-mw-utils'
   Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'bling/vim-airline'
+
 Bundle 'tpope/vim-dispatch'
 Bundle 'rosenfeld/conque-term'
 Bundle 'jgdavey/tslime.vim'
+
 Bundle 'nathanaelkane/vim-indent-guides'
 
 " ====== Ruby / Rails
