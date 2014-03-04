@@ -16,6 +16,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'SearchHighlighting'
+  " SearchHighlighting Dependency
+  Bundle 'ingo-library'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'jeetsukumaran/vim-buffergator'
