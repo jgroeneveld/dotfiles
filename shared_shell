@@ -30,7 +30,7 @@ alias hub='~/bin/hub'
 
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
 alias gd='git diff'
-alias gad='git add .'
+alias gad='git add --all .'
 alias gco='git checkout'
 alias gp='git push'
 
@@ -62,14 +62,9 @@ alias be='bundle exec'
 alias aplutex='xattr -d com.apple.quarantine ~/Documents/Projekte/Plutex/files.dmg; hdiutil attach ~/Documents/Projekte/Plutex/files.dmg; cd /Volumes/Plutex/'
 alias dplutex='cd ~; hdiutil detach /Volumes/Plutex/'
 
-alias pong='cd /Volumes/Plutex/pong'
-alias kong='cd /Volumes/Plutex/kong'
-
-
 # ======= DYNPORT =======
-alias ffandroid='cd ~/Dropbox/projects/1414/ffandroid'
-alias ffiphone='cd ~/Dropbox/projects/1414/ffiphone'
-alias ff='cd ~/Dropbox/projects/1414/ff'
+alias disco='cd ~/Documents/disco'
+alias mapcase='cd ~/Documents/mapcase'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'

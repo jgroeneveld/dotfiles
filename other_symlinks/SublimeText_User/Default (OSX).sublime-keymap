@@ -1,8 +1,19 @@
 [
+    // Vim Like Back / Forward Movement
+    { "keys": ["ctrl+o"], "command": "jump_back" },
+    { "keys": ["ctrl+i"], "command": "jump_forward" },
+
+
+
+    {
+        "keys": ["command+shift+r"],
+        "command": "goto_symbol_in_project"
+    },
+
     // closing all files but not the window
-    { 
-        "keys": ["super+shift+w"], 
-        "command": "close_all" 
+    {
+        "keys": ["super+shift+w"],
+        "command": "close_all"
     },
 
     // ===============================================
@@ -12,7 +23,7 @@
     {
         "keys": ["super+alt+left"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -38,7 +49,7 @@
     {
         "keys": ["super+alt+right"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -64,7 +75,7 @@
     {
         "keys": ["super+alt+up"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -90,7 +101,7 @@
     {
         "keys": ["super+alt+down"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -118,7 +129,7 @@
     {
         "keys": ["super+alt+shift+left"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -144,7 +155,7 @@
     {
         "keys": ["super+alt+shift+right"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -170,7 +181,7 @@
     {
         "keys": ["super+alt+shift+up"],
         "command": "run_multiple_commands",
-        "args": { 
+        "args": {
             "commands": [
                 {
                     "command": "set_layout",
@@ -192,5 +203,52 @@
                 }
             ]
         }
-    }
+    },
+
+  { "keys": ["super+\\", "r"], "command": "run_single_ruby_test",
+    "context": [ { "key": "selector", "operator": "equal",
+                   "operand": "source.ruby, source.rspec, text.gherkin.feature"
+               } ]
+  }, // single test
+
+
+  { "keys": ["super+\\", "t"], "command": "run_all_ruby_test",
+      "context": [ { "key": "selector", "operator": "equal",
+             "operand": "source.ruby, source.rspec, text.gherkin.feature"
+                } ]
+  }, // test file
+
+
+  { "keys": ["super+\\", "e"], "command": "run_last_ruby_test",
+    "context": [ { "key": "selector", "operator": "equal",
+           "operand": "source.ruby, source.rspec, text.gherkin.feature"
+               } ]
+  }, // test last test file
+
+  { "keys": ["super+shift+x"], "command": "show_test_panel" }, // show test panel
+
+  { "keys": ["alt+shift+v"], "command": "verify_ruby_file",
+    "context": [ { "key": "selector", "operator": "equal",
+                   "operand": "source.ruby"
+               } ]
+  }, // verify ruby syntax
+
+  { "keys": ["ctrl+super+up"],
+      "command": "switch_between_code_and_test",
+      "args": {"split_view": false},
+      "context": [ { "key": "selector", "operator": "equal",
+                   "operand": "source.ruby, source.rspec, text.gherkin.feature"
+               } ]
+  }, // switch between code and test in single mode
+
+  { "keys": ["super+ctrl+period"],
+      "command": "switch_between_code_and_test",
+      "args": {"split_view": true},
+      "context": [ { "key": "selector", "operator": "equal",
+                   "operand": "source.ruby, source.rspec, text.gherkin.feature"
+               } ]
+  }, // switch between code and test in split view
+
+  { "keys": ["super+shift+c"], "command": "generate_file" } // create new file
+
 ]
