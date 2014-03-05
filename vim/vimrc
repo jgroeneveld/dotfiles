@@ -102,7 +102,7 @@ endif
 " CtrlP settings
 let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
-"let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
+let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
 
 " Airline settings
 let g:airline_symbols = {}
