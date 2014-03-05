@@ -10,7 +10,7 @@ endif
 
 let g:colors_name = "Pastie Jaap"
 
-hi Cursor  guifg=NONE guibg=#000000 gui=NONE
+hi Cursor  guifg=#ffffff guibg=#000000 gui=NONE
 hi Visual  guifg=NONE guibg=#80c7ff gui=NONE
 hi CursorLine  guifg=NONE guibg=#c1e2f8 gui=NONE
 hi CursorColumn  guifg=NONE guibg=#c1e2f8 gui=NONE
@@ -40,7 +40,7 @@ hi Function  guifg=#1076c3 guibg=NONE gui=NONE
 hi Identifier  guifg=#138b05 guibg=NONE gui=bold
 hi Keyword  guifg=#138b05 guibg=NONE gui=bold
 hi Label  guifg=#d71707 guibg=#fff0f0 gui=NONE
-hi NonText  guifg=#404040 guibg=#c1e2f8 gui=NONE
+hi NonText  guifg=#404040 guibg=NONE gui=NONE
 hi Number  guifg=#0000dc guibg=NONE gui=bold
 hi Operator  guifg=#138b05 guibg=NONE gui=bold
 hi PreProc  guifg=#138b05 guibg=NONE gui=bold

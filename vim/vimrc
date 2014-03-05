@@ -88,7 +88,7 @@ set t_Co=256
 if has("gui_running")
   set background=light
   "colors solarized
-  colors pastie
+  colors pastie_jaap
   "highlight CursorLineNr guifg=#ffff00 guibg=#666666
   "colors lucius
   "LuciusDark
@@ -103,6 +103,7 @@ endif
 let g:ctrlp_max_files=10000
 let g:ctrlp_max_depth=40
 let g:ctrlp_match_func = {'match': 'matcher#cmatch' }
+let g:ctrlp_extensions = ['funky']
 
 " Airline settings
 let g:airline_symbols = {}

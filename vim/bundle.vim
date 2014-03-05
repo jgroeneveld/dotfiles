@@ -12,13 +12,14 @@ Bundle 'gmarik/vundle'
 " ====== General
 Bundle 'kien/ctrlp.vim'
 Bundle 'JazzCore/ctrlp-cmatcher'
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'SearchHighlighting'
   " SearchHighlighting Dependency
   Bundle 'ingo-library'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab' " obsolet because of YouCompleteMe?
 Bundle 'scrooloose/syntastic'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'scrooloose/nerdcommenter'
@@ -40,6 +41,8 @@ Bundle 'rosenfeld/conque-term'
 Bundle 'jgdavey/tslime.vim'
 
 Bundle 'nathanaelkane/vim-indent-guides'
+
+Bundle 'Valloric/YouCompleteMe'
 
 " ====== Ruby / Rails
 Bundle 'tpope/vim-rails'
