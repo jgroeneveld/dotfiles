@@ -220,6 +220,14 @@ command! KillWhitespace call <SID>StripTrailingWhitespaces()
 
 autocmd FileType c,cpp,java,php,ruby,python,markdown,vim autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" ==================== save file and create dirs if missing ====================
+function WriteCreatingDirs()
+    execute ':silent !mkdir -p %:h'
+    write
+endfunction
+command W call WriteCreatingDirs()
+
+
 
 " ==================== UtilSnips with YouCompleteMe ====================
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
