@@ -110,5 +110,8 @@ export PATH=$PATH:~/go/bin
 
 export PATH=$PATH:/Applications/Postgres.app/Contents//Versions/9.3/bin/
 
+# aws secrets for mapcase
+source ~/Documents/mapcase/mapcase_config
+
 # rbenv
 eval "$(rbenv init -)"
