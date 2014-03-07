@@ -98,6 +98,7 @@ linker.link_all_files_in_dir("home", "~", ".")
 
 linker.link_hash({
   "vim/colors" => "~/.vim/colors/",
+  "vim/utilsnippets" => "~/.vim/utilsnippets/",
   "vim/bundle.vim" => "~/.vim/bundle.vim",
   "vim/vimrc" => "~/.vimrc",
   "vim/gvimrc" => "~/.gvimrc"

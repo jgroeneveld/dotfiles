@@ -224,9 +224,6 @@ autocmd FileType c,cpp,java,php,ruby,python,markdown,vim autocmd BufWritePre <bu
 " ==================== UtilSnips with YouCompleteMe ====================
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 
-" add my own snippets dir
-let g:UltiSnipsSnippetDirectories=["UltiSnips, utilsnippets"]
-
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
     if g:ulti_expand_res == 0
