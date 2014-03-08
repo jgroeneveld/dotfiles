@@ -29,6 +29,7 @@ Bundle 'regedarek/ZoomWin'
 Bundle 'rking/ag.vim'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'sickill/vim-pasta'
+Bundle 'vim-scripts/ruby-matchit'
 
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
