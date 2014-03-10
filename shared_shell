@@ -63,7 +63,9 @@ alias dplutex='cd ~; hdiutil detach /Volumes/Plutex/'
 
 # ======= DYNPORT =======
 alias disco='cd ~/Documents/disco'
-alias mapcase='cd ~/Documents/mapcase'
+alias 1414='cd ~/Documents/1414'
+alias phrase='cd ~/Documents/phrase/phrase'
+alias mapcase='cd ~/Documents/mapcase/rails_backend'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'
