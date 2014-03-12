@@ -10,6 +10,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " ====== General
+Bundle 'Shougo/unite.vim'
+Bundle 'h1mesuke/unite-outline'
+Bundle 'Shougo/vimproc'
 Bundle 'kien/ctrlp.vim'
 Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'tacahiroy/ctrlp-funky'
@@ -29,7 +32,7 @@ Bundle 'regedarek/ZoomWin'
 Bundle 'rking/ag.vim'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'sickill/vim-pasta'
-Bundle 'vim-scripts/ruby-matchit'
+Bundle 'terryma/vim-multiple-cursors'
 
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
