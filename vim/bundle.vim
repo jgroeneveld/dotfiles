@@ -25,7 +25,6 @@ Bundle 'SearchHighlighting'
 "Bundle 'ervandew/supertab' " obsolet because of YouCompleteMe?
 Bundle 'scrooloose/syntastic'
 Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Gundo'
 Bundle 'regedarek/ZoomWin'
@@ -33,6 +32,7 @@ Bundle 'rking/ag.vim'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'sickill/vim-pasta'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-commentary'
 
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
