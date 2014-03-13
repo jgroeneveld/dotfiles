@@ -168,6 +168,12 @@ endfunction
 command! RenameFile call RenameFile()
 
 " ==================== Mappings ====================
+" Can't be bothered to understand ESC vs <c-c> in insert mode
+imap <c-c> <esc>
+
+" quickly switch to alternate file (last buffer)
+nnoremap <leader><leader> <c-^>
+
 " expand directory of current active file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
