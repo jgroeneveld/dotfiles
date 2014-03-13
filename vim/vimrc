@@ -183,6 +183,25 @@ nnoremap ˚ 4k
 nnoremap H ^
 nnoremap L $
 
+" adding lines above / below cursor without moving (stolen from unimpaired)
+function! s:BlankUp(count) abort
+  put!=repeat(nr2char(10), a:count)
+  ']+1
+  silent! call repeat#set("\<Plug>myBlankUp", a:count)
+endfunction
+
+function! s:BlankDown(count) abort
+  put =repeat(nr2char(10), a:count)
+  ']-1
+  silent! call repeat#set("\<Plug>myBlankDown", a:count)
+endfunction
+
+nnoremap <silent> <Plug>myBlankUp    :<C-U>call <SID>BlankUp(v:count1)<CR>
+nnoremap <silent> <Plug>myBlankDown  :<C-U>call <SID>BlankDown(v:count1)<CR>
+
+nmap [<Space> <Plug>myBlankUp
+nmap ]<Space> <Plug>myBlankDown
+
 " Remap redo
 nmap U <C-R>
 
