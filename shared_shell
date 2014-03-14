@@ -33,6 +33,7 @@ alias gdc='git diff --cached'
 alias gad='git add --all .'
 alias gco='git checkout'
 alias gp='git push'
+alias gpur='git pull --rebase'
 
 function g {
   if [[ $# > 0 ]]; then
