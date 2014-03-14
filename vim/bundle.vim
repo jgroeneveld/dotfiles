@@ -29,10 +29,31 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Gundo'
 Bundle 'regedarek/ZoomWin'
 Bundle 'rking/ag.vim'
-Bundle 'sheerun/vim-polyglot'
 Bundle 'sickill/vim-pasta'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-commentary'
+
+" ====== language files
+" Bundle 'vim-polyglot'
+Bundle "kchmck/vim-coffee-script"
+Bundle "chrisbra/csv.vim"
+Bundle "tpope/vim-git"
+Bundle "jnwhiteh/vim-golang"
+Bundle "tpope/vim-haml"
+Bundle "othree/html5.vim"
+Bundle "pangloss/vim-javascript"
+Bundle "leshill/vim-json"
+Bundle "LaTeX-Box-Team/LaTeX-Box"
+Bundle "groenewege/vim-less"
+Bundle "tpope/vim-markdown"
+Bundle "vim-perl/vim-perl"
+Bundle "StanAngeloff/php.vim"
+Bundle "vim-scripts/python.vim--Vasiliev"
+Bundle "sheerun/rspec.vim"
+Bundle "vim-ruby/vim-ruby"
+Bundle "slim-template/vim-slim"
+
+
 
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
