@@ -64,10 +64,11 @@ alias aplutex='xattr -d com.apple.quarantine ~/Documents/Projekte/Plutex/files.d
 alias dplutex='cd ~; hdiutil detach /Volumes/Plutex/'
 
 # ======= DYNPORT =======
-alias disco='cd ~/Documents/disco'
-alias 1414='cd ~/Documents/1414'
-alias phrase='cd ~/Documents/phrase/phrase'
-alias mapcase='cd ~/Documents/mapcase/rails_backend'
+alias dynport='cd ~/GoogleDrive/Dynport'
+alias disco='cd ~/GoogleDrive/Dynport/disco'
+alias 1414='cd ~/GoogleDrive/Dynport/1414'
+alias phrase='cd ~/GoogleDrive/Dynport/phrase/phrase'
+alias mapcase='cd ~/GoogleDrive/Dynport/mapcase/rails_backend'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'
@@ -115,7 +116,7 @@ export PATH=$PATH:~/go/bin
 export PATH=$PATH:/Applications/Postgres.app/Contents//Versions/9.3/bin/
 
 # aws secrets for mapcase
-source ~/Documents/mapcase/mapcase_config
+source ~/GoogleDrive/Dynport/mapcase/mapcase_env
 
 # rbenv
 eval "$(rbenv init -)"
