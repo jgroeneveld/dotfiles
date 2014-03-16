@@ -16,6 +16,8 @@ alias adb='/Users/jaap/Documents/Programmieren/_tools/android-sdk-mac_x86/platfo
 alias ddms='/Users/jaap/Documents/Programmieren/_tools/android-sdk-mac_x86/tools/ddms'
 alias nme='haxelib run nme'
 alias vim='mvim -v'
+alias vi='mvim -v'
+
 # ======== Titanium ========
 # alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.0.2.GA/titanium.py'
 function install_titanium_module() { cp $1 ~/Library/Application\ Support/Titanium/ ;}
