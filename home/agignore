@@ -1,0 +1,10 @@
+log/
+logs/
+tmp/
+vendor/
+*.sql
+*.tags*
+*.tmp*
+*.old
+*.pdf
+*.log

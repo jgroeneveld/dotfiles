@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " ====== General
 Bundle 'Shougo/unite.vim'
 Bundle 'h1mesuke/unite-outline'
+Bundle 'Shougo/neomru.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'kien/ctrlp.vim'
 Bundle 'JazzCore/ctrlp-cmatcher'

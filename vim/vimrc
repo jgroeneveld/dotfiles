@@ -186,8 +186,6 @@ map <C-l> <C-w>l
 " faster movin
 nnoremap ∆ 4j
 nnoremap ˚ 4k
-nnoremap H ^
-nnoremap L $
 
 " adding lines above / below cursor without moving (stolen from unimpaired)
 function! s:BlankUp(count) abort
@@ -346,10 +344,12 @@ call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ 'tmp/',
       \ 'log/',
       \ ], '\|'))
+call unite#custom#source('file_rec/async','sorters','sorter_rank')
 
 nnoremap <leader>p :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap <leader>P :Unite -no-split -buffer-name=files -start-insert file<cr>
 nnoremap <leader>f :Unite -no-split -buffer-name=search grep:.<cr>
 nnoremap <leader>o :Unite -buffer-name=outline outline<cr>
+nnoremap <leader>m :Unite -buffer-name=recent file_mru<cr>
 nnoremap <leader>u :UniteResume<cr>
 
