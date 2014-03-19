@@ -206,6 +206,9 @@ nnoremap <silent> <Plug>myBlankDown  :<C-U>call <SID>BlankDown(v:count1)<CR>
 nmap [<Space> <Plug>myBlankUp
 nmap ]<Space> <Plug>myBlankDown
 
+nmap <silent> [t :tabp<cr>
+nmap <silent> ]t :tabn<cr>
+
 " Remap redo
 nmap U <C-R>
 
