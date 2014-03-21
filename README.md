@@ -11,7 +11,14 @@ other links are defined at the bottom of linker.rb
 also install:
 
 brew
+rbenv / ruby-build
+macvim with lua
+~/.vim/bundle/ctrlp-cmatcher/install_linux.sh
+~/.vim/bundle/YouCompleteMe/install.sh
+~/.vim/bundle/vimproc (make) - for unite async
 node / jsonlint
-vim/ctrlp-cmatcher
-vim/youcompleteme
+Aga
+
+
+and ./other_files
 
