@@ -168,6 +168,9 @@ endfunction
 command! RenameFile call RenameFile()
 
 " ==================== Mappings ====================
+" make zm center horizontal
+:nnoremap zm zszH
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
