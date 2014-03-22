@@ -23,7 +23,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'SearchHighlighting'
   " SearchHighlighting Dependency
   Bundle 'ingo-library'
-"Bundle 'ervandew/supertab' " obsolet because of YouCompleteMe?
 Bundle 'scrooloose/syntastic'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'scrooloose/nerdtree'
@@ -39,7 +38,6 @@ Bundle 'tpope/vim-commentary'
 Bundle "kchmck/vim-coffee-script"
 Bundle "chrisbra/csv.vim"
 Bundle "tpope/vim-git"
-Bundle "jnwhiteh/vim-golang"
 Bundle "tpope/vim-haml"
 Bundle "othree/html5.vim"
 Bundle "pangloss/vim-javascript"
@@ -53,30 +51,25 @@ Bundle "vim-scripts/python.vim--Vasiliev"
 Bundle "sheerun/rspec.vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "slim-template/vim-slim"
-
+Bundle "jnwhiteh/vim-golang"
 
 
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
+" ===== misc
 Bundle 'bling/vim-airline'
-
-
-Bundle 'tpope/vim-dispatch'
-Bundle 'rosenfeld/conque-term'
-Bundle 'jgdavey/tslime.vim'
-
+" Bundle 'tpope/vim-dispatch'
+" Bundle 'rosenfeld/conque-term'
+" Bundle 'jgdavey/tslime.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-
 Bundle 'Valloric/YouCompleteMe'
 
 " ====== Ruby / Rails
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'thoughtbot/vim-rspec'
-"Bundle 'skwp/vim-rspec'
-"Bundle 'skwp/vim-ruby-conque'
 Bundle 'tpope/vim-endwise'
 Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'

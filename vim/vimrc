@@ -299,9 +299,20 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
     \| exe "normal! g`\"" | endif
 
 
+" ==================== Go ====================
+" godef
+let g:godef_same_file_in_same_window=1
+let g:godef_split=0 " 0 = reuse window, 1 = split, 2 = tab
+
+
 " ==================== Filetypes ====================
 " In Makefiles, use real tabs, not tabs expanded to spaces
 au FileType make setlocal noexpandtab
+
+" go go
+au FileType go setlocal noexpandtab nolist
+
+
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown

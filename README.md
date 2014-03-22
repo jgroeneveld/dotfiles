@@ -8,17 +8,21 @@ everything in ./home will be linked as $HOME/.file
 other links are defined at the bottom of linker.rb
 
 
-also install:
-
+# also install
+## before vimbundleinstall
+./other_files
 brew
 rbenv / ruby-build
 macvim with lua
+node / jsonlint
+Ag
+go
+nsf/gocode
+dgryski/vim-godef
+
+## after vimbundleinstall
 ~/.vim/bundle/ctrlp-cmatcher/install_linux.sh
 ~/.vim/bundle/YouCompleteMe/install.sh
 ~/.vim/bundle/vimproc (make) - for unite async
-node / jsonlint
-Aga
 
-
-and ./other_files
 
