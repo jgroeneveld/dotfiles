@@ -17,7 +17,6 @@ macvim with lua
 node / jsonlint
 Ag
 go
-nsf/gocode
 dgryski/vim-godef
 
 ## after vimbundleinstall
@@ -28,3 +27,7 @@ dgryski/vim-godef
 ## whenever
 jq - http://stedolan.github.io/jq/
 
+go get
+  - goimports
+  - nsf/gocode
+  - godef
