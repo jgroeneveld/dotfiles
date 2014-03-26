@@ -25,4 +25,6 @@ dgryski/vim-godef
 ~/.vim/bundle/YouCompleteMe/install.sh
 ~/.vim/bundle/vimproc (make) - for unite async
 
+## whenever
+jq - http://stedolan.github.io/jq/
 

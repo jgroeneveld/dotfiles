@@ -171,8 +171,9 @@ command! RenameFile call RenameFile()
 " make zm center horizontal
 :nnoremap zm zszH
 
-" Can't be bothered to understand ESC vs <c-c> in insert mode
+" use <c-c> where possible
 imap <c-c> <esc>
+let g:multi_cursor_quit_key='<c-c>'
 
 " quickly switch to alternate file (last buffer)
 nnoremap <leader><leader> <c-^>
@@ -206,8 +207,8 @@ endfunction
 nnoremap <silent> <Plug>myBlankUp    :<C-U>call <SID>BlankUp(v:count1)<CR>
 nnoremap <silent> <Plug>myBlankDown  :<C-U>call <SID>BlankDown(v:count1)<CR>
 
-nmap [<Space> <Plug>myBlankUp
-nmap ]<Space> <Plug>myBlankDown
+nmap <Space>k <Plug>myBlankUp
+nmap <Space>j <Plug>myBlankDown
 
 nmap <silent> [t :tabp<cr>
 nmap <silent> ]t :tabn<cr>
@@ -303,7 +304,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 " godef
 let g:godef_same_file_in_same_window=1
 let g:godef_split=0 " 0 = reuse window, 1 = split, 2 = tab
-
+let g:gofmt_command="goimports"
 
 " ==================== Filetypes ====================
 " In Makefiles, use real tabs, not tabs expanded to spaces
