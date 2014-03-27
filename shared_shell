@@ -36,6 +36,7 @@ alias gad='git add --all .'
 alias gco='git checkout'
 alias gp='git push'
 alias gpur='git pull --rebase'
+alias glstandup='gl --since "1 day ago" --author="jgroeneveld"'
 
 function g {
   if [[ $# > 0 ]]; then
