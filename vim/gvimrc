@@ -14,3 +14,6 @@ autocmd VimResized * wincmd =       " Automatically resize windows
 
 nnoremap <M-DOWN> 4j
 nnoremap <M-UP> 4k
+
+" do not go to end of file
+nnoremap <S-CR> <CR>
