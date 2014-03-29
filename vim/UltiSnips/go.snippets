@@ -1,4 +1,4 @@
-snippet gocheck "gocheck skeleton"
+snippet gcsuite "gocheck suite skeleton"
 package `basename \`pwd\``
 
 import (
@@ -14,7 +14,7 @@ func (s *$1Suite) Test_$2(c *gc.C) {
 var _ = gc.Suite(&$1Suite{})
 endsnippet
 
-snippet gochecksetup "gocheck setup"
+snippet gcsetup "gocheck setup"
 package `basename \`pwd\``
 
 import (
@@ -25,3 +25,8 @@ import (
 func Test(t *testing.T) { gc.TestingT(t) }
 endsnippet
 
+snippet gcfunc "gocheck function"
+func (s *${1:My}Suite) Test_$2(c *gc.C) {
+	$0
+}
+endsnippet
