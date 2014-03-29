@@ -292,6 +292,10 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
+"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsListSnippets="<c-e>"
 
 " ==================== Remember last location ====================
 " Remember last location in file, but not for commit messages.
@@ -306,7 +310,7 @@ let g:godef_same_file_in_same_window=1
 let g:godef_split=0 " 0 = reuse window, 1 = split, 2 = tab
 let g:gofmt_command="goimports"
 au Filetype go :nnoremap <buffer> <Leader>gi :Import 
-au Filetype go :nnoremap <buffer> <Leader>gf :Fmt<cr>
+au Filetype go :nnoremap <buffer> <Leader>gf :Fmt<cr>:update<cr>
 
 
 " ==================== Filetypes ====================

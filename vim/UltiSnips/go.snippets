@@ -1,0 +1,27 @@
+snippet gocheck "gocheck skeleton"
+package `basename \`pwd\``
+
+import (
+	gc "launchpad.net/gocheck"
+)
+
+type ${1:My}Suite struct{}
+
+func (s *$1Suite) Test_$2(c *gc.C) {
+	$0
+}
+
+var _ = gc.Suite(&$1Suite{})
+endsnippet
+
+snippet gochecksetup "gocheck setup"
+package `basename \`pwd\``
+
+import (
+	"testing"
+	gc "launchpad.net/gocheck"
+)
+
+func Test(t *testing.T) { gc.TestingT(t) }
+endsnippet
+
