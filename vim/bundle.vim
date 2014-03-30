@@ -51,7 +51,8 @@ Bundle "sheerun/rspec.vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "slim-template/vim-slim"
 Bundle "jnwhiteh/vim-golang"
-
+  " more colorful golang syntax
+  Bundle "athom/more-colorful.vim"
 
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
