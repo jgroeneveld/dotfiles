@@ -25,9 +25,28 @@ dgryski/vim-godef
 ~/.vim/bundle/vimproc (make) - for unite async
 
 ## whenever
-jq - http://stedolan.github.io/jq/
+brew install
+  - jq - http://stedolan.github.io/jq/
+  - tree
 
 go get
   - goimports
   - nsf/gocode
   - godef
+
+
+
+
+
+# great stuff
+
+dash
+radiant player (google music) http://kbhomes.github.io/google-music-mac/
+airmail
+pocket
+nvalt
+alfred
+moom
+dropbox / google drive
+1password
+f.lux
