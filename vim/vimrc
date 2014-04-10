@@ -326,6 +326,9 @@ au FileType go setlocal noexpandtab nolist
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 au FileType markdown setlocal showbreak=\ \  wrap nolist
 
+" for rcmdnk/vim-mardown or plasticboy/vim-markdown
+let g:vim_markdown_initial_foldlevel=2
+
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 
