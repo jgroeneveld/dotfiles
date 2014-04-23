@@ -75,6 +75,8 @@ set statusline=%<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStat
 
 set autoread                      " Reload files when changed on disc
 
+set relativenumber
+
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
 set notimeout
@@ -93,6 +95,7 @@ if has("gui_running")
   "colors lucius
   "LuciusDark
   "let g:airline_theme='wombat'
+  let g:airline_theme='sol'
 else
   colors lucius
   LuciusDark
@@ -166,6 +169,11 @@ function! RenameFile()
     endif
 endfunction
 command! RenameFile call RenameFile()
+
+function! PromoteToLet()
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+endfunction
+command! PromoteToLet :call PromoteToLet()
 
 " ==================== Mappings ====================
 " make zm center horizontal
