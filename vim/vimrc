@@ -4,14 +4,10 @@ source ~/.vim/bundle.vim
 runtime macros/matchit.vim
 
 " ======================= training mode
-" inoremap  <Up>     <NOP>
-" inoremap  <Down>   <NOP>
-" inoremap  <Left>   <NOP>
-" inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+" noremap   <Up>     <NOP>
+" noremap   <Down>   <NOP>
+" noremap   <Left>   <NOP>
+" noremap   <Right>  <NOP>
 " ======================
 
 let mapleader = ","
@@ -194,6 +190,11 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+nmap <LEFT> <C-w>h
+nmap <DOWN> <C-w>j
+nmap <UP> <C-w>k
+nmap <RIGHT> <C-w>l
 
 " faster movin
 nnoremap ∆ 4j
