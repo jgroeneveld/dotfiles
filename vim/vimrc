@@ -222,6 +222,9 @@ nmap <Space>j <Plug>myBlankDown
 nmap <silent> [t :tabp<cr>
 nmap <silent> ]t :tabn<cr>
 
+nmap <silent> [b :BufSurfBack<cr>
+nmap <silent> ]b :BufSurfForward<cr>
+
 " Remap redo
 nmap U <C-R>
 
@@ -249,6 +252,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 nnoremap <C-DOWN> :cn<CR>zt
 nnoremap <C-UP> :cp<CR>zt
+
 
 " ==================== Git commit ====================
 " activates spelling correction and enters insert
@@ -370,6 +374,7 @@ endfunction "}}}
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
+let g:unite_force_overwrite_statusline = 0
 
 " setup ignore patterns
 call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
@@ -380,10 +385,11 @@ call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ ], '\|'))
 call unite#custom#source('file_rec/async','sorters','sorter_rank')
 
-nnoremap <leader>p :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap <leader>p :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap <leader>P :Unite -no-split -buffer-name=files -start-insert file<cr>
 nnoremap <leader>f :Unite -no-split -buffer-name=search grep:.<cr>
-nnoremap <leader>o :Unite -buffer-name=outline outline<cr>
-nnoremap <leader>m :Unite -buffer-name=recent file_mru<cr>
+nnoremap <leader>o :Unite -no-split -buffer-name=outline outline<cr>
+nnoremap <leader>m :Unite -no-split -buffer-name=recent file_mru<cr>
+nnoremap <leader>b :Unite -no-split -buffer-name=buffer buffer<cr>
 nnoremap <leader>u :UniteResume<cr>
 
