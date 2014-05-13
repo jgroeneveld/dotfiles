@@ -287,6 +287,8 @@ command W call WriteCreatingDirs()
 " ==================== UtilSnips with YouCompleteMe ====================
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
     if g:ulti_expand_res == 0
