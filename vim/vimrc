@@ -377,7 +377,7 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 let g:unite_force_overwrite_statusline = 0
 let g:unite_source_rec_max_cache_files=5000
 let g:unite_prompt='» '
-
+let g:unite_split_rule = 'botright'
 
 
 " setup ignore patterns
@@ -391,11 +391,12 @@ call unite#custom#source('file_rec/async','sorters','sorter_rank')
 call unite#custom#source('line,outline','matchers','matcher_fuzzy')
 
 map <space> [unite]
-nnoremap [unite] <nop>files -start-insert file_rec/async:!<cr>
+nnoremap [unite] <nop>
 
-nnoremap [unite]P :Unite -auto-resize -buffer-name=files -start-insert file<cr>
+nnoremap [unite]p :Unite -auto-resize -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap [unite]f :Unite -auto-resize -buffer-name=files -start-insert file<cr>
 nnoremap [unite]l :Unite -auto-resize -buffer-name=lines -start-insert line<cr>
-nnoremap [unite]f :Unite -no-quit -buffer-name=search grep:.<cr>
+nnoremap [unite]g :Unite -no-quit -buffer-name=search grep:.<cr>
 nnoremap [unite]o :Unite -auto-resize -buffer-name=outline outline<cr>
 nnoremap [unite]m :Unite -auto-resize -buffer-name=recent file_mru<cr>
 nnoremap [unite]b :Unite -auto-resize -buffer-name=buffer buffer<cr>
