@@ -7,6 +7,10 @@ my dotfiles
 everything in ./home will be linked as $HOME/.file
 other links are defined at the bottom of linker.rb
 
+# ctags
+contains the ctags git hooks by tpope `http://stackoverflow.com/questions/16363460/set-up-a-default-directory-structure-on-git-init`
+`git ctags` generates the tags
+each repo should have hooks that update the ctags on commit, merge, checkout
 
 # also install
 ## before vimbundleinstall

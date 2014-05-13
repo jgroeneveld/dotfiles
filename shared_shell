@@ -17,6 +17,7 @@ alias ddms='/Users/jaap/Documents/Programmieren/_tools/android-sdk-mac_x86/tools
 alias nme='haxelib run nme'
 alias vim='mvim -v'
 alias vi='mvim -v'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # ======== Titanium ========
 # alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.0.2.GA/titanium.py'
