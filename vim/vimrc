@@ -153,7 +153,8 @@ set textwidth=0 wrapmargin=0
 
 
 " ==================== Commands ====================
-command! OpenFolder !open %:p:h
+command! OpenFolder silent !open %:p:h
+command! OpenInChrome silent !open % -a "Google Chrome"
 
 function! RenameFile()
     let old_name = expand('%')
