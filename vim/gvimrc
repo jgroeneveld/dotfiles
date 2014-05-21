@@ -1,6 +1,6 @@
 "set guifont=DejaVu\ Sans\ Mono:h15  " Font family and font size.
 "set guifont=Source\ Code\ Pro\ For\ Powerline:h11   " Font family and font size.
-set guifont=Menlo\ For\ Powerline:h11   " Font family and font size.
+set guifont=Menlo\ For\ Powerline:h13   " Font family and font size.
 set antialias                       " MacVim: smooth fonts.
 set encoding=utf-8                  " Use UTF-8 everywhere.
 set guioptions-=T                   " Hide toolbar.

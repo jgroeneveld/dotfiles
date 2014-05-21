@@ -245,6 +245,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" Splitjoin
+nmap <Space>ss :SplitjoinSplit<CR>
+nmap <Space>sj :SplitjoinJoin<CR>
+
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
 " dont replace netrw, ignore open nerdtree when closing vim
@@ -283,12 +287,22 @@ function WriteCreatingDirs()
 endfunction
 command W call WriteCreatingDirs()
 
+" =================== neocompl ===================
+let g:neocomplete#enable_at_startup = 1
 
+if !exists('g:neocomplete#sources')
+  let g:neocomplete#sources = {}
+endif
+" let g:neocomplete#sources._ = ['buffer', 'file', 'ultisnips']
+let g:neocomplete#sources._ = ['buffer', 'file']
+let g:skip_auto_completion_time = "0.1"
 
 " ==================== UtilSnips with YouCompleteMe ====================
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 
-let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_min_num_identifier_candidate_chars = 4
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -380,7 +394,7 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 let g:unite_force_overwrite_statusline = 0
 let g:unite_source_rec_max_cache_files=5000
 let g:unite_prompt='» '
-let g:unite_split_rule = 'botright'
+" let g:unite_split_rule = 'botright'
 
 
 " setup ignore patterns
@@ -397,9 +411,9 @@ map <space> [unite]
 nnoremap [unite] <nop>
 
 nnoremap [unite]p :Unite -auto-resize -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap [unite]f :Unite -auto-resize -buffer-name=files -start-insert file<cr>
+nnoremap [unite]t :Unite -auto-resize -buffer-name=files -start-insert file<cr>
 nnoremap [unite]l :Unite -auto-resize -buffer-name=lines -start-insert line<cr>
-nnoremap [unite]g :Unite -no-quit -buffer-name=search grep:.<cr>
+nnoremap [unite]f :Unite -no-quit -buffer-name=search grep:.<cr>
 nnoremap [unite]o :Unite -auto-resize -buffer-name=outline outline<cr>
 nnoremap [unite]m :Unite -auto-resize -buffer-name=recent file_mru<cr>
 nnoremap [unite]b :Unite -auto-resize -buffer-name=buffer buffer<cr>
