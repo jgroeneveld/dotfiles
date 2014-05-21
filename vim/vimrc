@@ -1,8 +1,6 @@
 set nocompatible                  " Must come first because it changes other options.
 source ~/.vim/bundle.vim
 
-runtime macros/matchit.vim
-
 " ======================= training mode
 " noremap   <Up>     <NOP>
 " noremap   <Down>   <NOP>
@@ -12,16 +10,14 @@ runtime macros/matchit.vim
 
 let mapleader = ","
 
-syntax enable                     " Turn on syntax highlighting.
+syntax enable
 syntax sync minlines=256          " maybe more speed?
 
 filetype plugin indent on         " Turn on file type detection.
 set synmaxcol=200                 " disable highlighting long lines
 
-set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
-set backspace=indent,eol,start    " Intuitive backspacing.
 set whichwrap+=<,>,h,l,[,]        " Automatically move to next line at EOL
 
 set mouse=a                       " Enable the mouse
@@ -30,14 +26,11 @@ set hidden                        " Handle multiple buffers better.
 
 set lazyredraw                    " Dont update the display while executing macros
 
-set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest,full    " Complete files like a shell.
 
 set number                        " Show line numbers.
-set ruler                         " Show cursor position.
 
 set hlsearch                      " Highlight matches.
-set incsearch                     " Highlight matches as you type.
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital
@@ -65,19 +58,10 @@ set expandtab                     " Use spaces instead of tabs
 set splitright                    " More natural splitting
 set splitbelow
 
-set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=%<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-set autoread                      " Reload files when changed on disc
-
 set relativenumber
-
-" Time out on key codes but not mappings.
-" Basically this makes terminal Vim work sanely.
-set notimeout
-set ttimeout
-set ttimeoutlen=100
 
 set list
 set listchars=tab:▸\ ,trail:.,extends:❯,precedes:❮
