@@ -176,6 +176,13 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" use Very Nomagic Search Patterns by default
+nnoremap / /\V
+vnoremap / /\V
+nnoremap ? ?\V
+vnoremap ? ?\V
+nnoremap :s/ :s/\V
+
 nmap <LEFT> <C-w>h
 nmap <DOWN> <C-w>j
 nmap <UP> <C-w>k
