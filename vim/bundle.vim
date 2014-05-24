@@ -68,8 +68,8 @@ Bundle 'bling/vim-airline'
 " Bundle 'rosenfeld/conque-term'
 " Bundle 'jgdavey/tslime.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-" Bundle 'Valloric/YouCompleteMe'
-Bundle 'Shougo/neocomplete.vim'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Shougo/neocomplete.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 
 " ====== Ruby / Rails
