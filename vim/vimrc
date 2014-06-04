@@ -185,7 +185,6 @@ nnoremap / /\V
 vnoremap / /\V
 nnoremap ? ?\V
 vnoremap ? ?\V
-nnoremap :s/ :s/\V
 
 nmap <LEFT> <C-w>h
 nmap <DOWN> <C-w>j
@@ -231,11 +230,22 @@ nnoremap Y y$
 nmap # *
 vmap # *
 
-" vim-rspec
-map <Leader>r :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" thoughtbot/vim-rspec {
+  " copy the config over and change the command to use bundler 
+  let g:rspec_runner = "os_x_terminal"
+  let s:cmd = "be rspec {spec}"
+
+  if has("gui_running") && has("gui_macvim")
+    let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/" . g:rspec_runner . " '" . s:cmd . "'"
+  else
+    let g:rspec_command = "!clear && echo " . s:cmd . " && " . s:cmd
+  endif
+
+  map <Leader>r :call RunCurrentSpecFile()<CR>
+  map <Leader>s :call RunNearestSpec()<CR>
+  map <Leader>l :call RunLastSpec()<CR>
+  map <Leader>a :call RunAllSpecs()<CR>
+" }
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
@@ -367,7 +377,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 au FileType markdown setlocal showbreak=\ \  wrap nolist noexpandtab
 
 " for rcmdnk/vim-mardown or plasticboy/vim-markdown
-let g:vim_markdown_initial_foldlevel=2
+let g:vim_markdown_initial_foldlevel=3
 
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
