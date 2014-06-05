@@ -69,6 +69,7 @@ alias dplutex='cd ~; hdiutil detach /Volumes/Plutex/'
 
 # ======= DYNPORT =======
 alias disco='cd ~/Dropbox/Projekte/disco'
+alias discomine='cd ~/Dropbox/Projekte/discomine'
 alias phrase='cd ~/Dropbox/Projekte/phrase/phrase'
 alias mapcase='cd ~/Dropbox/Projekte/mapcase/rails_backend'
 
