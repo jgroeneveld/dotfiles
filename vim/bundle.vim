@@ -58,6 +58,9 @@ Bundle "jnwhiteh/vim-golang"
   " more colorful golang syntax
   Bundle "athom/more-colorful.vim"
 
+Bundle "xolox/vim-session"
+  Bundle "xolox/vim-misc"
+
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'

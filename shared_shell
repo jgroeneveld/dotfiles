@@ -125,8 +125,9 @@ export PATH=$PATH:$GOROOT/bin
 
 export PATH=$PATH:/Applications/Postgres.app/Contents//Versions/9.3/bin/
 
-# aws secrets for mapcase
+# secrets for projects
 source ~/Dropbox/Projekte/mapcase/mapcase_env
+source ~/Dropbox/Projekte/disco_env
 
 # rbenv
 eval "$(rbenv init -)"
