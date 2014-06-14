@@ -57,15 +57,7 @@ function gc {
 }
 
 # ======== Rails ========
-alias r='rails'
-alias rc='rails c'
-alias rs='rails s'
-alias rg='rails g'
 alias be='bundle exec'
-
-# ======== Plutex ========
-alias aplutex='xattr -d com.apple.quarantine ~/Documents/Projekte/Plutex/files.dmg; hdiutil attach ~/Documents/Projekte/Plutex/files.dmg; cd /Volumes/Plutex/'
-alias dplutex='cd ~; hdiutil detach /Volumes/Plutex/'
 
 # ======= DYNPORT =======
 alias disco='cd ~/Dropbox/Projekte/disco'
@@ -75,6 +67,7 @@ alias mapcase='cd ~/Dropbox/Projekte/mapcase/rails_backend'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'
+alias blog='cd ~/GoogleDrive/Projekte/Eigene/Blog'
 
 
 # ====== zeug

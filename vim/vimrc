@@ -165,8 +165,8 @@ command! BD :bp\|bd #
 nmap <silent> <leader>d :BD<CR>
 
 " use <c-c> where possible
-imap <c-c> <esc>
-let g:multi_cursor_quit_key='<c-c>'
+" imap <c-c> <esc>
+" let g:multi_cursor_quit_key='<c-c>'
 
 " quickly switch to alternate file (last buffer)
 nnoremap <leader><leader> <c-^>
@@ -395,6 +395,9 @@ au FileType go setlocal noexpandtab nolist
 " Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 au FileType markdown setlocal showbreak=\ \  wrap nolist noexpandtab
+
+" options for text
+au FileType text setlocal wrap nolist 
 
 " for rcmdnk/vim-mardown or plasticboy/vim-markdown
 let g:vim_markdown_initial_foldlevel=3
