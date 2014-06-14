@@ -11,8 +11,10 @@ endif
 let g:colors_name = "Pastie Jaap"
 
 hi Cursor  guifg=#ffffff guibg=#5f87af gui=NONE
-hi Visual  guifg=NONE guibg=#afd7ff  gui=NONE
-hi CursorLine  guifg=NONE guibg=#c1e2f8 gui=NONE
+" hi Visual  guifg=NONE guibg=#afd7ff  gui=NONE
+hi Visual  guifg=NONE guibg=#c1e2f8  gui=NONE
+hi CursorLine  guifg=NONE guibg=#dceffb gui=NONE
+"hi CursorLine  guifg=NONE guibg=#c1e2f8 gui=NONE
 hi CursorColumn  guifg=NONE guibg=#c1e2f8 gui=NONE
 hi LineNr  guifg=#808080 guibg=#ffffff gui=NONE
 hi VertSplit  guifg=#cfcfcf guibg=#cfcfcf gui=NONE
