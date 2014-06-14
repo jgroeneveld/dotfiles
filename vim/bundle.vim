@@ -61,6 +61,8 @@ Bundle "jnwhiteh/vim-golang"
 Bundle "xolox/vim-session"
   Bundle "xolox/vim-misc"
 
+Bundle "vim-scripts/CursorLineCurrentWindow"
+
 " ====== Snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'

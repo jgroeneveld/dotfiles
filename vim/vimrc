@@ -58,6 +58,9 @@ set expandtab                     " Use spaces instead of tabs
 set splitright                    " More natural splitting
 set splitbelow
 
+set cursorline
+
+
 " Useful status information at bottom of screen
 set statusline=%<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
