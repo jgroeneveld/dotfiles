@@ -168,8 +168,8 @@ command! BD :bp\|bd #
 nmap <silent> <leader>d :BD<CR>
 
 " use <c-c> where possible
-" imap <c-c> <esc>
-" let g:multi_cursor_quit_key='<c-c>'
+imap <c-c> <esc>
+let g:multi_cursor_quit_key='<c-c>'
 
 " quickly switch to alternate file (last buffer)
 nnoremap <leader><leader> <c-^>

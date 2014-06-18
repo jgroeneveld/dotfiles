@@ -38,7 +38,8 @@ go get
   - nsf/gocode
   - godef
 
-
+pip install httpie (http cli - curl replacement)
+	https://github.com/jakubroztocil/httpie/blob/master/README.rst
 
 
 
