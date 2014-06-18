@@ -52,6 +52,9 @@ function most_used_commands {
   cat ~/.zsh_history|cut -d ';' -f 2- 2>/dev/null| awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head
 }
 
+# ignore file expanding errors for stuff like rake task[parameter]
+unsetopt nomatch
+
 setopt no_share_history
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

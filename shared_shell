@@ -62,8 +62,7 @@ alias be='bundle exec'
 # ======= DYNPORT =======
 alias disco='cd ~/Dropbox/Projekte/disco'
 alias discomine='cd ~/Dropbox/Projekte/discomine'
-alias phrase='cd ~/Dropbox/Projekte/phrase/phrase'
-alias mapcase='cd ~/Dropbox/Projekte/mapcase/rails_backend'
+alias mapcase='cd ~/Documents/ProjekteArchiv/mapcase/rails_backend'
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'
@@ -119,7 +118,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/Applications/Postgres.app/Contents//Versions/9.3/bin/
 
 # secrets for projects
-source ~/Dropbox/Projekte/mapcase/mapcase_env
+source ~/Documents/ProjekteArchiv/mapcase/mapcase_env
 source ~/Dropbox/Projekte/disco_env
 
 # rbenv
