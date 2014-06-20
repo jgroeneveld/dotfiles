@@ -141,7 +141,9 @@ set textwidth=0 wrapmargin=0
 
 " ==================== Commands ====================
 command! OpenFolder silent !open %:p:h
+command! Openfolder OpenFolder
 command! OpenInChrome silent !open % -a "Google Chrome"
+command! Openinchrome OpenInChrome
 
 function! RenameFile()
     let old_name = expand('%')
@@ -153,6 +155,7 @@ function! RenameFile()
     endif
 endfunction
 command! RenameFile call RenameFile()
+command! Renamefile call RenameFile()
 
 function! PromoteToLet()
   :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
