@@ -154,7 +154,6 @@ function! RenameFile()
         redraw!
     endif
 endfunction
-command! RenameFile call RenameFile()
 command! Renamefile call RenameFile()
 
 function! PromoteToLet()
