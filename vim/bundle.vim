@@ -34,6 +34,7 @@ Bundle 'rking/ag.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-commentary'
+Bundle 'godlygeek/tabular'
 
 " ====== language files
 " Bundle 'vim-polyglot'
