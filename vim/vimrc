@@ -188,7 +188,7 @@ command! BDAllInactive :call DeleteInactiveBufs()
 :nnoremap zm zszH
 
 " delete buffer without closing window
-command! BD :bp\|bd #
+command! BD :bp|bd #
 nmap <silent> <leader>d :BD<CR>
 
 " use <c-c> where possible
