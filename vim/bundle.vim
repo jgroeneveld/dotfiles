@@ -36,6 +36,9 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-commentary'
 Bundle 'godlygeek/tabular'
 
+" ====== TMUX
+Bundle 'christoomey/vim-tmux-navigator'
+
 " ====== language files
 " Bundle 'vim-polyglot'
 Bundle "kchmck/vim-coffee-script"
