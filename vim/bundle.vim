@@ -38,6 +38,7 @@ Bundle 'godlygeek/tabular'
 
 " ====== TMUX
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'jgdavey/tslime.vim'
 
 " ====== language files
 " Bundle 'vim-polyglot'

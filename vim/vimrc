@@ -83,7 +83,7 @@ else
   " colors lucius
   " LuciusDark
   " let g:airline_theme='wombat'
-  " set background=light
+  set background=light
   " colors default
   colors lucius
   LuciusWhite
@@ -277,6 +277,7 @@ vmap # *
     let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/" . g:rspec_runner . " '" . s:cmd . "'"
   else
     let g:rspec_command = "!clear && echo " . s:cmd . " && " . s:cmd
+    let g:rspec_command = 'call Send_to_Tmux("' . s:cmd . '\n")'
   endif
 
   map <Leader>r :call RunCurrentSpecFile()<CR>
