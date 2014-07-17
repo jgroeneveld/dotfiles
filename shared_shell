@@ -18,6 +18,7 @@ alias nme='haxelib run nme'
 alias vim='mvim -v'
 alias vi='mvim -v'
 alias ctags="`brew --prefix`/bin/ctags"
+alias marvel_sense='open /Users/jgroeneveld/GoogleDrive/bin/marvel-latest/_site/sense/index.html'
 
 # ======== Titanium ========
 # alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.0.2.GA/titanium.py'
