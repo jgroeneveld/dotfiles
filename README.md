@@ -32,7 +32,9 @@ dgryski/vim-godef
 brew install
   - jq - http://stedolan.github.io/jq/
   - tree
-
+	- tmux
+	- reattach-to-user-namespace
+			( https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard )
 go get
   - goimports
   - nsf/gocode
