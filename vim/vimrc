@@ -276,8 +276,10 @@ vmap # *
   if has("gui_running") && has("gui_macvim")
     let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/" . g:rspec_runner . " '" . s:cmd . "'"
   else
-    let g:rspec_command = "!clear && echo " . s:cmd . " && " . s:cmd
-    let g:rspec_command = 'call Send_to_Tmux("' . s:cmd . '\n")'
+    " let g:rspec_command = "!clear && echo " . s:cmd . " && " . s:cmd
+    " let g:rspec_command = 'call Send_to_Tmux("' . s:cmd . '\n")'
+    let s:complete_cmd = "clear && echo " . s:cmd . " && " . s:cmd
+    let g:rspec_command = 'call VimuxRunCommand("clear && ' . s:complete_cmd . '\n")'
   endif
 
   map <Leader>r :call RunCurrentSpecFile()<CR>
@@ -289,6 +291,11 @@ vmap # *
 " ------ xolox/vim-session ------ {{{
   let g:session_autosave = 'no'
   let g:session_autoload = 'no'
+" }}}
+
+" ------ benmills/vimux ------ {{{
+  let g:VimuxOrientation = "h"
+  let g:VimuxHeight = "40"
 " }}}
 
 " Gundo
