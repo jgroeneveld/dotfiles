@@ -61,7 +61,7 @@ function gc {
 alias be='bundle exec'
 
 # ======= DYNPORT =======
-alias disco='cd ~/Dropbox/Projekte/disco'
+alias disco='cd ~/go/src/github.com/dynport/disco'
 alias discomine='cd ~/Dropbox/Projekte/discomine'
 alias mapcase='cd ~/Documents/ProjekteArchiv/mapcase/rails_backend'
 
