@@ -279,7 +279,7 @@ vmap # *
     " let g:rspec_command = "!clear && echo " . s:cmd . " && " . s:cmd
     " let g:rspec_command = 'call Send_to_Tmux("' . s:cmd . '\n")'
     let s:complete_cmd = "clear && echo " . s:cmd . " && " . s:cmd
-    let g:rspec_command = 'call VimuxRunCommand("clear && ' . s:complete_cmd . '\n")'
+    let g:rspec_command = 'call VimuxRunCommand("' . s:complete_cmd . '\n")'
   endif
 
   map <Leader>r :call RunCurrentSpecFile()<CR>
@@ -477,6 +477,20 @@ function! s:unite_my_settings() "{{{
   imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
 endfunction "}}}
 
+" allows input of a file search regex for ag
+function! UniteFindWithFileRegex() "{{{
+  let search_pattern = unite#util#input('Pattern: ')
+
+  if search_pattern != ""
+    let file_regex = unite#util#input('File Regex: ')
+    if file_regex != ''
+      let file_regex = '-G\ ' . file_regex
+    endif
+
+    execute "Unite -no-quit -buffer-name=search grep:.:" . file_regex . ":" . search_pattern
+  endif
+endfunction "}}}
+
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
@@ -502,7 +516,8 @@ nnoremap [unite] <nop>
 nnoremap [unite]p :Unite -auto-resize -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap [unite]t :Unite -auto-resize -buffer-name=files -start-insert file<cr>
 nnoremap [unite]l :Unite -auto-resize -buffer-name=lines -start-insert line<cr>
-nnoremap [unite]f :Unite -no-quit -buffer-name=search grep:.<cr>
+" nnoremap [unite]f :Unite -no-quit -buffer-name=search grep:.<cr>
+nnoremap [unite]f :call UniteFindWithFileRegex()<cr>
 nnoremap [unite]o :Unite -auto-resize -buffer-name=outline outline<cr>
 nnoremap [unite]m :Unite -auto-resize -buffer-name=recent file_mru<cr>
 nnoremap [unite]b :Unite -auto-resize -buffer-name=buffer buffer<cr>
