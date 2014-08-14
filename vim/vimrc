@@ -491,6 +491,10 @@ function! UniteFindWithFileRegex() "{{{
   endif
 endfunction "}}}
 
+function! UniteFilesSourceWithCurrentDir() "{{{
+  let path = expand('%:h').'/'
+  execute "Unite -auto-resize -buffer-name=files -input=" . path . " file"
+endfunction "}}}
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
@@ -514,7 +518,9 @@ map <space> [unite]
 nnoremap [unite] <nop>
 
 nnoremap [unite]p :Unite -auto-resize -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap [unite]t :Unite -auto-resize -buffer-name=files -start-insert file<cr>
+" nnoremap [unite]t :Unite -auto-resize -buffer-name=files -start-insert file<cr>
+nnoremap [unite]t :call UniteFilesSourceWithCurrentDir()<cr>
+
 nnoremap [unite]l :Unite -auto-resize -buffer-name=lines -start-insert line<cr>
 " nnoremap [unite]f :Unite -no-quit -buffer-name=search grep:.<cr>
 nnoremap [unite]f :call UniteFindWithFileRegex()<cr>
