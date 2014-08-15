@@ -487,6 +487,8 @@ function! UniteFindWithFileRegex() "{{{
       let file_regex = '-G\ ' . file_regex
     endif
 
+    let search_pattern = substitute(search_pattern, " ", "\\\\ ", "g")
+
     execute "Unite -no-quit -buffer-name=search grep:.:" . file_regex . ":" . search_pattern
   endif
 endfunction "}}}
