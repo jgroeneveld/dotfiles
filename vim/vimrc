@@ -149,6 +149,7 @@ command! OpenFolder silent !open %:p:h
 command! Openfolder OpenFolder
 command! OpenInChrome silent !open % -a "Google Chrome"
 command! Openinchrome OpenInChrome
+command! MdViewer silent !open % -a "Marked 2"
 
 function! RenameFile()
     let old_name = expand('%')
@@ -442,7 +443,7 @@ au FileType go setlocal noexpandtab nolist
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
-au FileType markdown setlocal showbreak=\ \  wrap nolist noexpandtab
+au FileType markdown setlocal showbreak=\ \  wrap nolist
 
 " options for text
 au FileType text setlocal wrap nolist 

@@ -137,8 +137,7 @@ eval "$(jenv init -)"
 
 
 # secrets for projects
-source ~/Documents/ProjekteArchiv/mapcase/mapcase_env
-source ~/Dropbox/Projekte/disco_env
+alias disco_env='source ~/Dropbox/Projekte/disco_env'
 
 
 
