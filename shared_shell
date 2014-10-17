@@ -137,9 +137,8 @@ eval "$(jenv init -)"
 
 
 # secrets for projects
-alias disco_env='source ~/Dropbox/Projekte/disco_env'
-
-
+alias disco_env='source ~/Dropbox/Projekte/envs/disco_env'
+alias dynportde_env='source ~/Dropbox/Projekte/envs/dynportde_env'
 
 # rbenv
 eval "$(rbenv init -)"
