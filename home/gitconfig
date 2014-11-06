@@ -19,7 +19,7 @@
   changed = green
   untracked = cyan
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/jgroeneveld/.gitignore
 	pager = less -x5,9
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

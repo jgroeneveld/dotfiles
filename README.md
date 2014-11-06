@@ -35,6 +35,8 @@ brew install
 	- tmux
 	- reattach-to-user-namespace
 			( https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard )
+  - z
+      ( https://github.com/rupa/z )
 go get
   - goimports
   - nsf/gocode
