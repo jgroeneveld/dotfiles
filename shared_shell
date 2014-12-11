@@ -143,5 +143,7 @@ eval "$(jenv init -)"
 alias disco_env='source ~/Dropbox/Projekte/envs/disco_env'
 alias dynportde_env='source ~/Dropbox/Projekte/envs/dynportde_env'
 
+alias jgroeneveld_env='source ~/GoogleDrive/Sicher/envs/aws_credentials'
+
 # rbenv
 eval "$(rbenv init -)"
