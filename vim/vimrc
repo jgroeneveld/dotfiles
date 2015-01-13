@@ -173,6 +173,12 @@ function! ConvertHashRocket(line1, line2)
 endfunction
 command! -range ConvertHashRocket :call ConvertHashRocket(<line1>, <line2>)
 
+function! ConvertSymbolHashToStringRocket(line1, line2)
+  silent exec ':' . a:line1 . ',' . a:line2 .'s/: /" => /g'
+  silent exec ':' . a:line1 . ',' . a:line2 .'normal I"'
+endfunction
+command! -range ConvertSymbolHashToStringRocket :call ConvertSymbolHashToStringRocket(<line1>, <line2>)
+
 " source: http://stackoverflow.com/questions/1534835/how-do-i-close-all-buffers-that-arent-shown-in-a-window-in-vim
 function! DeleteInactiveBufs()
     "From tabpagebuflist() help, get a list of all buffers in all tabs
