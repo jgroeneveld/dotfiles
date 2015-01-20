@@ -439,7 +439,7 @@ au Filetype go :nnoremap <buffer> <Leader>gi :Import
 " vim-go
 let g:go_auto_type_info = 1
 au Filetype go :nnoremap <buffer> <c-]> :GoDef<cr>
-au FileType go nmap <leader>r <Plug>(go-test)
+au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>b <Plug>(go-build)
 
 
