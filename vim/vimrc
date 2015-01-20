@@ -435,7 +435,11 @@ let g:godef_same_file_in_same_window=1
 let g:godef_split=0 " 0 = reuse window, 1 = split, 2 = tab
 let g:gofmt_command="goimports"
 au Filetype go :nnoremap <buffer> <Leader>gi :Import 
-au Filetype go :nnoremap <buffer> <Leader>gf :Fmt<cr>:update<cr>
+
+" vim-go
+let g:go_auto_type_info = 1
+au Filetype go :nnoremap <buffer> <c-]> :GoDef<cr>
+au FileType go nmap <leader>r <Plug>(go-test)
 
 
 " ==================== Filetypes ====================

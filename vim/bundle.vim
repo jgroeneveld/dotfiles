@@ -60,7 +60,6 @@ Bundle "vim-scripts/python.vim--Vasiliev"
 Bundle "sheerun/rspec.vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "slim-template/vim-slim"
-Bundle "jnwhiteh/vim-golang"
   " more colorful golang syntax
   Bundle "athom/more-colorful.vim"
 
@@ -92,7 +91,8 @@ Bundle 'textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " ====== Go
-Bundle 'dgryski/vim-godef'
+Bundle 'fatih/vim-go'
+Bundle 'rhysd/vim-go-impl'
 
 
 
