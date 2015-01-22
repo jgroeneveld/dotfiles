@@ -131,6 +131,9 @@ set wildignore+=*/spec/cassettes/*
 set wildignore+=*/public/assets/*
 set wildignore+=*/public/uploads/*
 
+" for go
+set wildignore+=*/Godeps/*
+
 " for phraseapp in specific
 set wildignore+=/Users/dynport/projects/dynport/phrase/solr/*
 set wildignore+=*/.rsync_cache/*
@@ -323,6 +326,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nnoremap <C-DOWN> :cn<CR>zt
 nnoremap <C-UP> :cp<CR>zt
 
+" Tagbar
+nnoremap <leader>o :TagbarToggle<CR>
+" sort by appearance (1 = by name)
+let g:tagbar_sort = 0
+
 
 " ==================== Git commit ====================
 " activates spelling correction and enters insert
@@ -433,14 +441,16 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 " godef
 let g:godef_same_file_in_same_window=1
 let g:godef_split=0 " 0 = reuse window, 1 = split, 2 = tab
-let g:gofmt_command="goimports"
 au Filetype go :nnoremap <buffer> <Leader>gi :Import 
 
 " vim-go
 let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
 au Filetype go :nnoremap <buffer> <c-]> :GoDef<cr>
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t :GoTest ./...<cr>
+au FileType go nmap <leader>r :GoTest ./...<cr> " bind to r too so i dont get confused with ruby
+au FileType go nmap <space>a :GoTest ./...<cr>
+au FileType go nmap <space><cr> :make<cr>
 
 
 " ==================== Filetypes ====================
@@ -526,6 +536,11 @@ call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ '\.git/',
       \ '/tmp/',
       \ '/log/',
+      \ '/Godeps/',
+      \ ], '\|'))
+call unite#custom_source('tag',
+      \ 'ignore_pattern', join([
+      \ '/Godeps/',
       \ ], '\|'))
 call unite#custom#source('file_rec/async','sorters','sorter_rank')
 call unite#custom#source('line,outline','matchers','matcher_fuzzy')
@@ -535,13 +550,12 @@ nnoremap [unite] <nop>
 
 nnoremap [unite]p :Unite -auto-resize -buffer-name=files -start-insert file_rec/async:!<cr>
 " nnoremap [unite]t :Unite -auto-resize -buffer-name=files -start-insert file<cr>
-nnoremap [unite]t :call UniteFilesSourceWithCurrentDir()<cr>
+nnoremap [unite]t :Unite -auto-resize -buffer-name=tag -start-insert tag<cr>
 
 nnoremap [unite]l :Unite -auto-resize -buffer-name=lines -start-insert line<cr>
 " nnoremap [unite]f :Unite -no-quit -buffer-name=search grep:.<cr>
 nnoremap [unite]f :call UniteFindWithFileRegex()<cr>
 nnoremap [unite]o :Unite -auto-resize -buffer-name=outline outline<cr>
-nnoremap [unite]m :Unite -auto-resize -buffer-name=recent file_mru<cr>
 nnoremap [unite]b :Unite -auto-resize -buffer-name=buffer buffer<cr>
 nnoremap [unite]u :UniteResume<cr>
 

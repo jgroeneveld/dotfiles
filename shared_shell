@@ -77,6 +77,10 @@ alias df='cd ~/dotfiles'
 alias blog='cd ~/GoogleDrive/Projekte/Eigene/Blog'
 
 
+# ======== Golang ========
+alias wip='make -f Makefile.wip'
+
+
 # ====== zeug
 
 alias kw='date +%V'
