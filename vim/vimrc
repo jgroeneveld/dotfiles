@@ -437,20 +437,23 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
     \| exe "normal! g`\"" | endif
 
 
-" ==================== Go ====================
+" ==================== Golang ====================
 " godef
 let g:godef_same_file_in_same_window=1
 let g:godef_split=0 " 0 = reuse window, 1 = split, 2 = tab
 au Filetype go :nnoremap <buffer> <Leader>gi :Import 
 
 " vim-go
-let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
+au FileType go nmap <space>i :GoInfo<cr>
 au Filetype go :nnoremap <buffer> <c-]> :GoDef<cr>
 au FileType go nmap <leader>t :GoTest ./...<cr>
 au FileType go nmap <leader>r :GoTest ./...<cr> " bind to r too so i dont get confused with ruby
 au FileType go nmap <space>a :GoTest ./...<cr>
 au FileType go nmap <space><cr> :make<cr>
+au FileType go nmap <leader><cr> :Wip<cr>
+" dont use :make because this will cause jumping to files logged in statements
+command! -nargs=* Wip :!clear && echo $ make -f Makefile.wip <f-args> && make -f Makefile.wip <f-args>
 
 
 " ==================== Filetypes ====================
