@@ -83,8 +83,8 @@ else
   " colors lucius
   " LuciusDark
   " let g:airline_theme='wombat'
+
   set background=light
-  " colors default
   colors lucius
   LuciusWhite
   let g:airline_theme='sol'
@@ -386,10 +386,6 @@ let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_min_num_identifier_candidate_chars = 4
 
-" ycm should not use tab key http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'qf' : 1,
@@ -406,29 +402,12 @@ let g:ycm_filetype_blacklist = {
       \}
 
 " =================== Make AutoComplete Popups work with UltiSnips ===============
-" http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-"
-" let g:UltiSnipsExpandTrigger="<c-j>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsListSnippets="<c-e>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " ==================== Remember last location ====================
 " Remember last location in file, but not for commit messages.
@@ -454,6 +433,8 @@ au FileType go nmap <space><cr> :make<cr>
 au FileType go nmap <leader><cr> :Wip<cr>
 " dont use :make because this will cause jumping to files logged in statements
 command! -nargs=* Wip :!clear && echo $ make -f Makefile.wip <f-args> && make -f Makefile.wip <f-args>
+
+command! -range JsonToStruct <line1>,<line2>normal ^wvi"yI" string `json:f:s` //^crmj^
 
 
 " ==================== Filetypes ====================
