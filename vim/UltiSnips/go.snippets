@@ -58,7 +58,9 @@ if port == "" {
 if !strings.Contains(port, ":") {
 	port = "127.0.0.1:" + port
 }
+
 logger.Printf("running port %q", port)
+
 return http.ListenAndServe(port, nil)
 endsnippet
 
@@ -198,7 +200,9 @@ var logger = log.New(os.Stderr, "", 0)
 
 func main() {
 	router := cli.NewRouter()
+
 	router.Register${1}
+
 	switch err := router.RunWithArgs(); err {
 	case nil, cli.ErrorHelpRequested, cli.ErrorNoRoute:
 		// ignore
@@ -336,6 +340,7 @@ if err != nil {
 	return err
 }
 defer rows.Close()
+
 for rows.Next() {
 	${2}
 	err = rows.Scan(${3})
@@ -343,6 +348,7 @@ for rows.Next() {
 		return err
 	}
 }
+
 if err := rows.Err(); err != nil {
 	return err
 }
