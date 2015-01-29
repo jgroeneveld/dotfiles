@@ -81,6 +81,8 @@ Bundle 'bling/vim-airline'
 " Bundle 'jgdavey/tslime.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/MatchTagAlways'
+  " Match HTML Tags
 " Bundle 'Shougo/neocomplete.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 

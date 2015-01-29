@@ -401,6 +401,16 @@ let g:ycm_filetype_blacklist = {
       \ 'xml': 1
       \}
 
+" ==================== MatchTagAlways ====================
+" add mason to filetypes as ego for go is detected as that
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'mason' : 1,
+    \}
+
 " =================== Make AutoComplete Popups work with UltiSnips ===============
 let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
@@ -429,8 +439,8 @@ au Filetype go :nnoremap <buffer> <c-]> :GoDef<cr>
 au FileType go nmap <leader>t :GoTest ./...<cr>
 au FileType go nmap <leader>r :GoTest ./...<cr> " bind to r too so i dont get confused with ruby
 au FileType go nmap <space>a :GoTest ./...<cr>
-au FileType go nmap <space><cr> :make<cr>
-au FileType go nmap <leader><cr> :Wip<cr>
+au FileType go nmap <space><cr> :update<cr> :make<cr>
+au FileType go nmap <leader><cr> :update<cr> :Wip<cr>
 " dont use :make because this will cause jumping to files logged in statements
 command! -nargs=* Wip :!clear && echo $ make -f Makefile.wip <f-args> && make -f Makefile.wip <f-args>
 
@@ -443,7 +453,6 @@ au FileType make setlocal noexpandtab
 
 " go go
 au FileType go setlocal noexpandtab nolist
-
 
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
