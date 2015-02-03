@@ -452,7 +452,7 @@ command! -range JsonToStruct <line1>,<line2>normal ^wvi"yI" string `json:f:s` 
 au FileType make setlocal noexpandtab
 
 " go go
-au FileType go setlocal noexpandtab nolist
+au FileType go setlocal noexpandtab nolist softtabstop=4 tabstop=4 shiftwidth=4
 
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
