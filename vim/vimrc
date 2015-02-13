@@ -439,10 +439,12 @@ au Filetype go :nnoremap <buffer> <c-]> :GoDef<cr>
 au FileType go nmap <leader>t :GoTest ./...<cr>
 au FileType go nmap <leader>r :GoTest ./...<cr> " bind to r too so i dont get confused with ruby
 au FileType go nmap <space>a :GoTest ./...<cr>
-au FileType go nmap <space><cr> :update<cr> :make<cr>
-au FileType go nmap <leader><cr> :update<cr> :Wip<cr>
+
+nmap <space><cr> :update<cr> :make<cr>
+nmap <leader><cr> :update<cr> :Wip<cr>
 " dont use :make because this will cause jumping to files logged in statements
-command! -nargs=* Wip :!clear && echo $ make -f Makefile.wip <f-args> && make -f Makefile.wip <f-args>
+" command! -nargs=* Wip :!clear && echo $ make -f Makefile.wip <f-args> && make -f Makefile.wip <f-args>
+command! -nargs=* Wip :VimuxRunCommand("make -f Makefile.wip")
 
 command! -range JsonToStruct <line1>,<line2>normal ^wvi"yI" string `json:f:s` //^crmj^
 
