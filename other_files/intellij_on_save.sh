@@ -5,10 +5,10 @@
 if [[ $1 == *.go ]]
 then
   goimports -w $1
-  make 2>&1 > /dev/null &
+  # make 2>&1 > /dev/null &
 fi
 
 if [[ $1 == *.ego ]]
 then
-  make 2>&1 > /dev/null &
+  # make 2>&1 > /dev/null &
 fi
