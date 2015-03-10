@@ -8,7 +8,7 @@ then
   # make 2>&1 > /dev/null &
 fi
 
-if [[ $1 == *.ego ]]
-then
+# if [[ $1 == *.ego ]]
+# then
   # make 2>&1 > /dev/null &
-fi
+# fi
