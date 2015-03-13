@@ -102,6 +102,8 @@ echo "=== Dont forget to use z ==="
 # https://langui.sh/2014/03/10/wunused-command-line-argument-hard-error-in-future-is-a-harsh-mistress/
 export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
 
+alias prettyjson='python -m json.tool'
+
 
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
