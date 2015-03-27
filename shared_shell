@@ -95,9 +95,8 @@ phpserver() {
     php -S localhost:$1
 }
 
-# use z https://github.com/rupa/z
-. `brew --prefix`/etc/profile.d/z.sh
-echo "=== Dont forget to use z ==="
+# use fasd for quick switching (z for cding, ,path in commands to autocomplete fuzzy: "vim ,sh" -> "vim ~/dotfiles/shared_shell"
+eval "$(fasd --init auto)"
 
 # https://langui.sh/2014/03/10/wunused-command-line-argument-hard-error-in-future-is-a-harsh-mistress/
 export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"

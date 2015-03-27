@@ -35,8 +35,8 @@ brew install
 	- tmux
 	- reattach-to-user-namespace
 			( https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard )
-  - z
-      ( https://github.com/rupa/z )
+  - fasd
+      ( https://github.com/clvv/fasd )
   - brew install gnu-sed
   -   ( allows usage of gnu-sed via gsed -- replace all occurences of old-address in all html files:  gsed -i 's/old-address/new-address/g' *.html)
   - ngrok
