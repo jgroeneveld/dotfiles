@@ -5,3 +5,6 @@ db/*.sqlite3
 .agignore
 .vimrc.local
 Makefile.wip
+*.swp
+.idea
+*.iml
