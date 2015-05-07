@@ -34,11 +34,6 @@ function install_titanium_module() { cp $1 ~/Library/Application\ Support/Titani
 
 
 # ======== GIT ========
-# https://github.com/defunkt/hub
-# hub create = erzeuge github repo vom aktuellen repo
-# hub browse = oeffne repo auf github
-alias hub='~/bin/hub'
-
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -64,6 +59,9 @@ function gc {
     git commit
   fi
 }
+
+# -------- tig --------
+alias t='tig status'
 
 # ======== Rails ========
 alias be='bundle exec'
@@ -156,6 +154,9 @@ alias jgroeneveld_env='source ~/GoogleDrive/Sicher/envs/aws_credentials'
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/jgroeneveld/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+# .net
+source dnvm.sh
 
 # rbenv
 eval "$(rbenv init -)"
