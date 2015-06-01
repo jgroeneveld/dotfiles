@@ -53,6 +53,8 @@ brew install
 
   - ngrok
   -   ( forward local ports  to the web, useful for webhook and api testing )
+  - glances
+  -   ( load / system monitoring https://github.com/nicolargo/glances )
 go get
   - goimports
   - nsf/gocode
