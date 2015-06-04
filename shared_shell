@@ -60,8 +60,9 @@ function gc {
   fi
 }
 
-# -------- tig --------
+# -------- git auxilary --------
 alias t='tig status'
+alias gitup='open -a GitUp "`git rev-parse --show-toplevel`"'
 
 # ======== Rails ========
 alias be='bundle exec'
