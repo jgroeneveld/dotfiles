@@ -5,6 +5,7 @@
 
 prefix=$1
 command=$2
+use_stderr=$3
 regex='^(.+):(\d+)';
 
 filter() {
@@ -12,10 +13,14 @@ filter() {
     if echo $line | grep -qE $regex; then
       echo "$prefix$line";
     else
-      echo $line;
+      echo $line
     fi
   done
 }
 
-# apply filter only to stderr, leave rest alone
-{ $command 2>&1 1>&3 | filter 1>&2; } 3>&1
+if [[ $use_stderr ]]; then
+  # apply filter only to stderr, leave rest alone
+  { $command 2>&1 1>&3 | filter 1>&2; } 3>&1
+else
+    $command | filter
+fi
