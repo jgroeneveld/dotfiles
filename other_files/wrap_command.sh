@@ -24,3 +24,5 @@ if [[ $use_stderr ]]; then
 else
     $command | filter
 fi
+
+exit ${PIPESTATUS[0]}
