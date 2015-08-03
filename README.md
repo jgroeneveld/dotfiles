@@ -68,6 +68,7 @@ pip install httpie (http cli - curl replacement)
 
 # great stuff
 
+launchRocket
 dash
 radiant player (google music) http://kbhomes.github.io/google-music-mac/
 airmail
