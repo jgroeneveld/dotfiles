@@ -78,6 +78,7 @@ alias df='cd ~/dotfiles'
 # ======== Golang ========
 alias wip='make -f Makefile.wip'
 
+alias idea='open -a /Applications/IntelliJ\ IDEA\ 14\ CE.app ${1-.}'
 
 # ====== zeug
 
