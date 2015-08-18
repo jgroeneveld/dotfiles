@@ -64,6 +64,9 @@ go get
 pip install httpie (http cli - curl replacement)
 	https://github.com/jakubroztocil/httpie/blob/master/README.rst
 
+https://github.com/junegunn/fzf
+  (C-r, kill -9 <TAB>, ssh **<TAB>)
+
 
 
 # great stuff
