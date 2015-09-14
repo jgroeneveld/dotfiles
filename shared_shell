@@ -103,6 +103,9 @@ export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
 
 alias prettyjson='python -m json.tool'
 
+# phrase
+export MYSQL_USE_LOCAL_INFILE=false
+
 
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
