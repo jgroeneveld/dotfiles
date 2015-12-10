@@ -7,15 +7,6 @@ alias vimbundleinstall='vimbundle -c ":BundleInstall"'
 alias vimbundleclean='vimbundle -c ":BundleClean"'
 
 # ======== Programme ========
-# use symlink instead
-# alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-# alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-# alias subl3='echo "***Use subl***"; subl'
-
-alias adb='/Users/jaap/Documents/Programmieren/_tools/android-sdk-mac_x86/platform-tools/adb'
-alias ddms='/Users/jaap/Documents/Programmieren/_tools/android-sdk-mac_x86/tools/ddms'
-alias nme='haxelib run nme'
-
 alias vim='mvim -v'
 alias vi='mvim -v'
 # alias vim='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
@@ -27,11 +18,6 @@ export EDITOR="mvim -v"
 alias vi='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
 alias ctags="`brew --prefix`/bin/ctags"
 alias marvel_sense='open http://127.0.0.1:9200/_plugin/marvel/sense/'
-
-# ======== Titanium ========
-# alias titanium='~/Library/Application\ Support/Titanium/mobilesdk/osx/2.0.2.GA/titanium.py'
-function install_titanium_module() { cp $1 ~/Library/Application\ Support/Titanium/ ;}
-
 
 # ======== GIT ========
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
@@ -66,11 +52,6 @@ alias t='tig status'
 # ======== Rails ========
 alias be='bundle exec'
 
-# ======= DYNPORT =======
-alias disco='cd ~/go/src/github.com/dynport/disco'
-alias discomine='cd ~/Dropbox/Projekte/discomine'
-alias mapcase='cd ~/Documents/ProjekteArchiv/mapcase/rails_backend'
-
 # ======== Folders ========
 alias df='cd ~/dotfiles'
 
@@ -103,9 +84,7 @@ export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
 
 alias prettyjson='python -m json.tool'
 
-# phrase
-export MYSQL_USE_LOCAL_INFILE=false
-
+alias checkcoffee="coffeelint -f .coffeelint.json ./**/*.coffee"
 
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
@@ -114,53 +93,18 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 export MANPATH=$MANPATH:/opt/local/share/man
 export INFOPATH=$INFOPATH:/opt/local/share/info
 
-export ANDROID_SDK='/Users/jaap/Documents/Programmieren/_tools/android-sdk-mac_x86'
-export ANDROID_NDK='/Users/jaap/Documents/Programmieren/_tools/android-ndk-r7b'
-export PATH=$PATH:"$ANDROID_SDK/tools"
-
-
-export PATH=$PATH:"/usr/texbin"
-export SOLR_HOME='/usr/local/Cellar/solr36/3.6.2/libexec/example'
-
 export PATH=$PATH:$HOME/bin
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# export GOROOT=`go env GOROOT`
-# export PATH=$PATH:$GOROOT/bin
-
-export PATH=$PATH:/Applications/Postgres.app/Contents//Versions/9.3/bin/
-export PATH=$PATH:/Applications/Postgres.app/Contents//Versions/9.4/bin/
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
-export STUDIO_JDK=/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk
-export PATH=$PATH:JAVA_HOME/bin
-export M2_HOME=$HOME/bin/apache-maven-3.2.3
-export M2=$M2_HOME/bin
-export PATH=$PATH:$M2
-export PATH=$PATH:$HOME/bin/activator-1.2.10
-
-export PATH=$PATH:$HOME/bin/gradle-2.0/bin
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-
 # secrets for projects
-alias disco_env='source ~/Dropbox/Projekte/envs/disco_env'
-alias dynportde_env='source ~/Dropbox/Projekte/envs/dynportde_env'
 alias jgroeneveld_env='source ~/GoogleDrive/Sicher/envs/aws_credentials'
-alias aws-dynport="AWS_CREDENTIALS_PATH=~/.disco/config.json aws-sts"
+
 
 # docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/jgroeneveld/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-# .net
-source dnvm.sh
+eval "$(docker-machine env default)"
+export DOCKER_IP=$(docker-machine ip default)
 
 # rbenv
 eval "$(rbenv init -)"
