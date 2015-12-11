@@ -84,7 +84,6 @@ export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
 
 alias prettyjson='python -m json.tool'
 
-alias checkcoffee="coffeelint -f .coffeelint.json ./**/*.coffee"
 
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
@@ -101,10 +100,15 @@ export PATH=$PATH:$GOPATH/bin
 # secrets for projects
 alias jgroeneveld_env='source ~/GoogleDrive/Sicher/envs/aws_credentials'
 
-
 # docker
 eval "$(docker-machine env default)"
 export DOCKER_IP=$(docker-machine ip default)
+
+alias checkcoffee="coffeelint -f .coffeelint.json ./**/*.coffee"
+alias jfc="RAILS_ENV=test rake javascript_fixtures:create"
+
+# work env
+source ~/ownCloud/work_env
 
 # rbenv
 eval "$(rbenv init -)"
