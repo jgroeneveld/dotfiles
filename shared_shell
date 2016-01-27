@@ -28,6 +28,11 @@ alias gco='git checkout'
 alias gp='git push'
 alias gpur='git pull --rebase'
 alias glstandup='gl --since "36 hours ago" --author="jgroeneveld"'
+alias gprequest='hub pull-request'
+
+# fuzzy (fzf) helper
+alias gcob='gco $(git branch -a | fzf)'
+alias gb='git branch -a | fzf'
 
 function g {
   if [[ $# > 0 ]]; then
@@ -105,7 +110,7 @@ eval "$(docker-machine env default)"
 export DOCKER_IP=$(docker-machine ip default)
 
 alias checkcoffee="coffeelint -f .coffeelint.json ./**/*.coffee"
-alias jfc="RAILS_ENV=test rake javascript_fixtures:create"
+alias jfc="RAILS_ENV=test be rake javascript_fixtures:create"
 
 # work env
 source ~/ownCloud/work_env

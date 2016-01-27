@@ -7,6 +7,7 @@ my dotfiles
 everything in ./home will be linked as $HOME/.file
 other links are defined at the bottom of linker.rb
 
+
 # ctags
 contains the ctags git hooks by tpope `http://stackoverflow.com/questions/16363460/set-up-a-default-directory-structure-on-git-init`
 `git ctags` generates the tags
@@ -71,17 +72,10 @@ https://github.com/junegunn/fzf
 
 # great stuff
 
+http://www.apptivateapp.com/
 launchRocket
 dash
-radiant player (google music) http://kbhomes.github.io/google-music-mac/
-airmail
-pocket
 nvalt
 alfred
 moom
-dropbox / google drive
-1password
-f.lux
 http://couleursapp.com/
-
-Marked2
