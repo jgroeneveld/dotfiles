@@ -81,6 +81,8 @@ phpserver() {
     php -S localhost:$1
 }
 
+alias curlstatus='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
+
 # use fasd for quick switching (z for cding, ,path in commands to autocomplete fuzzy: "vim ,sh" -> "vim ~/dotfiles/shared_shell"
 eval "$(fasd --init auto)"
 
