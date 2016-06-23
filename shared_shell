@@ -30,8 +30,8 @@ alias gp='git push'
 alias gpur='git pull --rebase'
 alias glstandup='gl --since "36 hours ago" --author="jgroeneveld"'
 alias gprequest='hub pull-request'
-alias gtags='git for-each-ref --sort="*authordate" --format="%(taggerdate:short) | %(tag) | %(contents)" refs/tags | tail -r | less'
-
+alias gtags='git for-each-ref --sort="-*authordate" --format="%(tag) - %(taggerdate:short)%0a%(contents)" refs/tags | less'
+alias gretag='git for-each-ref --sort="-*authordate" --format="# %(tag)%0a%(contents)" refs/tags --count=1 | vipe | git tag $(git describe --abbrev=0 --tags) -f -F -' # vipe is part of moreutils, this alias opens editor and changes last tag message
 # fuzzy (fzf) helper
 alias gcob='gco $(git branch -a | fzf)'
 alias gb='git branch -a | fzf'
