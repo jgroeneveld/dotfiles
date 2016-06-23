@@ -21,6 +21,7 @@ alias marvel_sense='open http://127.0.0.1:9200/_plugin/marvel/sense/'
 
 # ======== GIT ========
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
+alias glrelease='git log --oneline --grep=Merge --since "2 weeks ago"'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gad='git add --all .'
@@ -29,6 +30,7 @@ alias gp='git push'
 alias gpur='git pull --rebase'
 alias glstandup='gl --since "36 hours ago" --author="jgroeneveld"'
 alias gprequest='hub pull-request'
+alias gtags='git for-each-ref --sort="*authordate" --format="%(taggerdate:short) | %(tag) | %(contents)" refs/tags | tail -r | less'
 
 # fuzzy (fzf) helper
 alias gcob='gco $(git branch -a | fzf)'
