@@ -15,7 +15,6 @@ alias vi='mvim -v'
 #export EDITOR='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
 export EDITOR="mvim -v"
 
-alias vi='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
 alias ctags="`brew --prefix`/bin/ctags"
 alias marvel_sense='open http://127.0.0.1:9200/_plugin/marvel/sense/'
 
@@ -29,7 +28,8 @@ alias gco='git checkout'
 alias gp='git push'
 alias gpur='git pull --rebase'
 alias glstandup='gl --since "36 hours ago" --author="jgroeneveld"'
-alias gprequest='hub pull-request'
+alias gprequest='~/ownCloud/pull-request.sh'
+#alias gprequest='hub pull-request'
 alias gtags='git for-each-ref --sort="-*authordate" --format="%(tag) - %(taggerdate:short)%0a%(contents)" refs/tags | less'
 alias gretag='git for-each-ref --sort="-*authordate" --format="# %(tag)%0a%(contents)" refs/tags --count=1 | vipe | git tag $(git describe --abbrev=0 --tags) -f -F -' # vipe is part of moreutils, this alias opens editor and changes last tag message
 # fuzzy (fzf) helper
