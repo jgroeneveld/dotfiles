@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+hits = []
+
+ignored_files = [
+  'db/schema.rb'
+]
+
+checks = {
+  '\.rb$' => ['binding\.pry'],
+  '\.haml' => ['binding\.pry']
+}
+
+# Find the names of all the filenames that have been (A)dded (C)opied or (M)odified
+filenames = `git diff --cached --name-only --diff-filter=ACM`.split("\n").reject { |f| ignored_files.include?(f) }
+
+filenames.each do |filename|
+  # Perform special checks for _spec filenames (rspec tests)
+  checks.each do |filename_pattern, patterns|
+    if filename.match filename_pattern
+      patterns.each do |contents_pattern|
+        results = `git diff --cached #{filename} | grep "^\+[^+]" | grep "#{contents_pattern}"`.split("\n").map { |r| r.sub(/^\+[\s\t]*/, '') }
+        if $? == 0
+          # Add the relevant change with line number to the hits array
+          results.each do |r|
+            hits.push "#{filename}:" + `grep -n '#{r}' #{filename}`.sub(/:\s+/, ' ').chomp
+          end
+        end
+      end
+    end
+  end
+end
+
+if hits.any?
+  puts "\e[33m>>> Please remove the following problems from these files before committing\e[0m"
+  puts hits.join("\n")
+end
+
+exit 1 if hits.any?
+
+files = filenames.select{ |f| f.match('\.rb$') }
+if files && files.any?
+  rcop_command = "bundle exec rubocop #{files.join(' ')} -DR"
+  rcop = system(rcop_command)
+  unless rcop
+    puts "Please fix rubocop offenses"
+    puts rcop_command
+  end
+end
+
+files = filenames.select{ |f| f.match('\.coffee$') }
+if files && files.any?
+  ccop_command = "coffeelint -f .coffeelint.json #{files.join(' ')}"
+  ccop = system(ccop_command)
+  unless ccop
+    puts "Please fix coffeescript offenses."
+    puts ccop_command
+  end
+end
