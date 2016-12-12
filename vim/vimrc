@@ -75,19 +75,20 @@ if has("gui_running")
   "colors solarized
   colors pastie_jaap
   "highlight CursorLineNr guifg=#ffff00 guibg=#666666
-  "colors lucius
-  "LuciusDark
-  "let g:airline_theme='wombat'
-  let g:airline_theme='sol'
-else
   " colors lucius
   " LuciusDark
   " let g:airline_theme='wombat'
-
-  set background=light
-  colors lucius
-  LuciusWhite
   let g:airline_theme='sol'
+else
+  set background=dark
+  colors lucius
+  LuciusDark
+  let g:airline_theme='wombat'
+
+  " set background=light
+  " colors lucius
+  " LuciusWhite
+  " let g:airline_theme='sol'
 endif
 
 " CtrlP settings

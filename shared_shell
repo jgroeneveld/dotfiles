@@ -28,7 +28,6 @@ alias gco='git checkout'
 alias gp='git push'
 alias gpur='git pull --rebase'
 alias glstandup='gl --since "36 hours ago" --author="jgroeneveld"'
-alias gprequest='~/ownCloud/pull-request.sh'
 alias gtrim='~/dotfiles/other_files/git-trim-whitespace.sh'
 alias glint='~/dotfiles/other_files/lint_git_cached'
 
