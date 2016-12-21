@@ -79,4 +79,5 @@ nvalt
 alfred
 moom
 http://couleursapp.com/
+Byword (markdown)
 markdown quicklook: Markdown Run "brew cask install qlmarkdown"
