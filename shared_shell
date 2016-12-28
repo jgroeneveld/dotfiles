@@ -6,6 +6,8 @@ alias vimbundle='vim ~/.vim/bundle.vim'
 alias vimbundleinstall='vimbundle -c ":BundleInstall"'
 alias vimbundleclean='vimbundle -c ":BundleClean"'
 
+alias kakrc='kak ~/.config/kak/kakrc'
+
 # ======== Programme ========
 alias vim='mvim -v'
 alias vi='mvim -v'
@@ -14,6 +16,8 @@ alias vi='mvim -v'
 #export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 #export EDITOR='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
 export EDITOR="mvim -v"
+export EDITOR="kak"
+export EDITOR="nvim"
 
 alias ctags="`brew --prefix`/bin/ctags"
 alias marvel_sense='open http://127.0.0.1:9200/_plugin/marvel/sense/'

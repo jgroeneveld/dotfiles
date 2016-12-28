@@ -1,0 +1,49 @@
+# escape with jj
+hook global InsertChar j %{ try %{
+  exec -draft hH <a-k>jj<ret> d
+  exec <esc>
+}}
+
+# fzf-file on c-p
+map global normal <c-p> :fzf-file<ret>
+
+# yank to system clipboard always
+hook global NormalKey y|d|c %{ nop %sh{
+   echo "$kak_selection" | pbcopy
+}}
+
+# Paste from Clipboard
+map global normal p '<a-!>pbpaste<ret>:echo -color Information "Pasted from clipboard"<ret>'
+map global normal R ':reg w "%sh{pbpaste}"<ret>"wR:echo -color Information "replaced from clipboard"<ret>'
+
+# indent with spaces
+map global insert <tab> '<a-;><gt>'
+
+# display line numbers
+hook global WinCreate .* %{addhl number_lines}
+
+# fzf integration
+
+def -docstring 'invoke fzf to open a file' \
+  fzf-file %{ %sh{
+    if [ -z "$TMUX" ]; then
+      echo echo only works inside tmux
+    else
+      FILE=`fzf-tmux -d 15`
+      if [ -n "$FILE" ]; then
+        echo "eval -client '$kak_client' 'edit ${FILE}'" | kak -p ${kak_session}
+      fi
+    fi
+}}
+
+def -docstring 'invoke fzf to select a buffer' \
+  fzf-buffer %{ %sh{
+    if [ -z "$TMUX" ]; then
+      echo echo only works inside tmux
+    else
+      BUFFER=`echo ${kak_buflist} | tr : '\n' | fzf-tmux -d 15`
+      if [ -n "$BUFFER" ]; then
+        echo "eval -client '$kak_client' 'buffer ${BUFFER}'" | kak -p ${kak_session}
+      fi
+    fi
+}}
