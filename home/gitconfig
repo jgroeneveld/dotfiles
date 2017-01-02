@@ -38,5 +38,6 @@
 	templatedir = ~/dotfiles/git_template
 [alias]
 	ctags = !.git/hooks/ctags
+	unstage = reset HEAD --
 [credential]
 	helper = osxkeychain

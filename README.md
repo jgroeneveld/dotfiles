@@ -42,6 +42,7 @@ vim-go binaries
 
 ## whenever
 brew install
+  - git-extras
   - jq - http://stedolan.github.io/jq/
   - tree
 	- tmux
