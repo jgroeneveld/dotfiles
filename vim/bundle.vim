@@ -99,6 +99,7 @@ Bundle 'fatih/vim-go'
 Bundle 'rhysd/vim-go-impl'
 
 
+Bundle 'junegunn/fzf.vim'
 
  filetype plugin indent on        " required!
  "

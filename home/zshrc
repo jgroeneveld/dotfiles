@@ -39,6 +39,7 @@ DISABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git osx)
+plugins=(alias-tips)
 
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
@@ -59,3 +60,4 @@ setopt no_share_history
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi

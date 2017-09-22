@@ -7,6 +7,11 @@ alias vimbundleinstall='vimbundle -c ":BundleInstall"'
 alias vimbundleclean='vimbundle -c ":BundleClean"'
 
 alias kakrc='kak ~/.config/kak/kakrc'
+alias ll='ls -lhG'
+alias l='ls -lhG'
+alias lt='ls -lhGrt'
+alias la='ls -lhA'
+alias lat='ls -lhAtr'
 
 # ======== Programme ========
 alias vim='mvim -v'
@@ -16,15 +21,15 @@ alias vi='mvim -v'
 #export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 #export EDITOR='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
 export EDITOR="mvim -v"
-export EDITOR="kak"
-export EDITOR="nvim"
+# export EDITOR="kak"
+# export EDITOR="nvim"
+# export EDITOR="micro"
 
 alias ctags="`brew --prefix`/bin/ctags"
 alias marvel_sense='open http://127.0.0.1:9200/_plugin/marvel/sense/'
 
 # ======== GIT ========
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
-alias glrelease='git log --oneline --grep=Merge --since "2 weeks ago"'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gad='git add --all .'
@@ -64,6 +69,19 @@ alias t='tig status'
 
 # ======== Rails ========
 alias be='bundle exec'
+alias RET='RAILS_ENV=test'
+
+function rt {
+  if [[ $# > 0 ]]; then
+    if [[ $1 == spec/* ]]; then
+      SKIP_COVERAGE=true SPRING_PRELOADER=true bin/rspec $1
+    else
+      SKIP_COVERAGE=true SPRING_PRELOADER=true bin/rspec spec/$1
+    fi
+  else
+    SKIP_COVERAGE=true SPRING_PRELOADER=true bin/rspec
+  fi
+}
 
 # ======== Folders ========
 alias df='cd ~/dotfiles'
@@ -103,6 +121,7 @@ alias prettyjson='python -m json.tool'
 # ======== PATHs ========
 export PATH=$PATH:/opt/local/bin
 export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:/Users/jaap.groeneveld/ownCloud/bin"
 
 export MANPATH=$MANPATH:/opt/local/share/man
 export INFOPATH=$INFOPATH:/opt/local/share/info
