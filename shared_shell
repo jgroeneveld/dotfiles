@@ -14,13 +14,14 @@ alias la='ls -lhA'
 alias lat='ls -lhAtr'
 
 # ======== Programme ========
-alias vim='mvim -v'
-alias vi='mvim -v'
+#alias vim='mvim -v'
+#alias vi='mvim -v'
 # alias vim='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
 #export EDITOR=subl
 #export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 #export EDITOR='/usr/local/Cellar/macvim/7.4-72/bin/mvim -v'
-export EDITOR="mvim -v"
+#export EDITOR="mvim -v"
+export EDITOR="vim"
 # export EDITOR="kak"
 # export EDITOR="nvim"
 # export EDITOR="micro"
@@ -108,6 +109,18 @@ phpserver() {
 }
 
 alias curlstatus='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
+
+curl_time() {
+    curl -so /dev/null -w "\
+   namelookup:  %{time_namelookup}s\n\
+      connect:  %{time_connect}s\n\
+   appconnect:  %{time_appconnect}s\n\
+  pretransfer:  %{time_pretransfer}s\n\
+     redirect:  %{time_redirect}s\n\
+starttransfer:  %{time_starttransfer}s\n\
+-------------------------\n\
+        total:  %{time_total}s\n" "$@"
+}
 
 # use fasd for quick switching (z for cding, ,path in commands to autocomplete fuzzy: "vim ,sh" -> "vim ~/dotfiles/shared_shell"
 eval "$(fasd --init auto)"
