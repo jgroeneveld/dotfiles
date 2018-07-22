@@ -63,7 +63,7 @@ go get
   - godef
 
 
-pip install httpie (http cli - curl replacement)
+brew install httpie (http cli - curl replacement)
 	https://github.com/jakubroztocil/httpie/blob/master/README.rst
 
 https://github.com/junegunn/fzf
