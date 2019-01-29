@@ -1,0 +1,5 @@
+# ======== Rails ========
+alias be='bundle exec'
+
+# ======== rbenv ========
+eval "$(rbenv init -)"

@@ -47,7 +47,7 @@ SAVEHIST=20000
 
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/dotfiles/shared_shell
+source $HOME/dotfiles/shell_envs/_config
 
 function most_used_commands {
   cat ~/.zsh_history|cut -d ';' -f 2- 2>/dev/null| awk '{a[$1]++ } END{for(i in a){print a[i] " " i}}'|sort -rn|head
@@ -59,5 +59,4 @@ unsetopt nomatch
 setopt no_share_history
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi

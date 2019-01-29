@@ -1,0 +1,6 @@
+# alias jgroeneveld_env='source ~/GoogleDrive/Sicher/envs/aws_credentials'
+# source ~/ownCloud/work_env
+
+source $HOME/dotfiles/shell_envs/base
+source $HOME/dotfiles/shell_envs/git
+

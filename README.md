@@ -15,18 +15,18 @@ each repo should have hooks that update the ctags on commit, merge, checkout
 
 # also install
 ## before vimbundleinstall
+
 ./other_files
 brew
-brew install rbenv ruby-build zsh z go jenv
+brew install zsh z fasd fzf # https://github.com/clvv/fasd (fuzzy commands)| https://github.com/junegunn/fzf (c-r)
+brew install git-extras jq
+brew install rbenv ruby-build
+brew install go
   add /usr/local/bin/zsh to /etc/shells
   chsh -s /usr/local/bin/zsh
 
 macvim with lua
   brew install macvim --with-cscope --with-lua
-
-- tmux
-- reattach-to-user-namespace
-    ( https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard )
 
 brew install ag
 
@@ -42,14 +42,10 @@ vim-go binaries
 
 ## whenever
 brew install
-  - git-extras
-  - jq - http://stedolan.github.io/jq/
   - tree
 	- tmux
 	- reattach-to-user-namespace
 			( https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard )
-  - fasd
-      ( https://github.com/clvv/fasd )
   - brew install gnu-sed
   -   ( allows usage of gnu-sed via gsed -- replace all occurences of old-address in all html files:  gsed -i 's/old-address/new-address/g' *.html)
 

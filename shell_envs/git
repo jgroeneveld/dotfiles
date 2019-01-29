@@ -1,0 +1,37 @@
+# ======== GIT ========
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=iso'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gad='git add --all .'
+alias gco='git checkout'
+alias gp='git push'
+alias gpur='git pull --rebase'
+alias glstandup='gl --since "36 hours ago" --author="jgroeneveld"'
+alias gtrim='~/dotfiles/other_files/git-trim-whitespace.sh'
+alias glint='~/dotfiles/other_files/lint_git_cached'
+
+alias gtags='git for-each-ref --sort="-*authordate" --format="%(tag) - %(taggerdate:short)%0a%(contents)" refs/tags | less'
+alias gretag='git for-each-ref --sort="-*authordate" --format="# %(tag)%0a%(contents)" refs/tags --count=1 | vipe | git tag $(git describe --abbrev=0 --tags) -f -F -' # vipe is part of moreutils, this alias opens editor and changes last tag message
+# fuzzy (fzf) helper
+alias gcob='gco $(git branch -a | fzf)'
+alias gb='git branch -a | fzf'
+
+function g {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+
+function gc {
+  if [[ $# > 0 ]]; then
+    echo "[#$1] " > /tmp/git_commit_template
+    git commit -t /tmp/git_commit_template
+  else
+    git commit
+  fi
+}
+
+# -------- git auxilary --------
+alias t='tig status'

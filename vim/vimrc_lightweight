@@ -1,0 +1,309 @@
+set nocompatible                  " Must come first because it changes other options.
+
+let mapleader = ","
+
+syntax enable
+syntax sync minlines=256          " maybe more speed?
+
+filetype plugin indent on         " Turn on file type detection.
+set synmaxcol=200                 " disable highlighting long lines
+
+set showmode                      " Display the mode you're in.
+
+set whichwrap+=<,>,h,l,[,]        " Automatically move to next line at EOL
+
+set mouse=a                       " Enable the mouse
+
+set hidden                        " Handle multiple buffers better.
+
+set lazyredraw                    " Dont update the display while executing macros
+
+set wildmode=list:longest,full    " Complete files like a shell.
+
+set number                        " Show line numbers.
+
+set hlsearch                      " Highlight matches.
+
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital
+set gdefault                      " Set global as default for substitute
+
+set nowrap                          " Turn off line wrapping.
+set linebreak
+
+set scrolloff=3                   " Show 3 lines of context around the cursor.
+
+set title                         " Set the terminal's title
+
+set visualbell                    " No beeping.
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set backupdir^=~/.vim/_backup//   " where to put backup files.
+set directory^=~/.vim/_temp//     " where to put swap files
+set updatecount=0                 " disable swap files
+
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+
+set splitright                    " More natural splitting
+set splitbelow
+
+set cursorline
+
+
+" Useful status information at bottom of screen
+set statusline=%<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+set relativenumber
+
+set list
+set listchars=tab:▸\ ,trail:.,extends:❯,precedes:❮
+
+set t_Co=256
+if has("gui_running")
+  set background=light
+  "colors solarized
+  colors pastie_jaap
+  "highlight CursorLineNr guifg=#ffff00 guibg=#666666
+  " colors lucius
+  " LuciusDark
+  " let g:airline_theme='wombat'
+  let g:airline_theme='sol'
+else
+  set background=dark
+  colors lucius
+  LuciusDark
+  let g:airline_theme='wombat'
+
+  " set background=light
+  " colors lucius
+  " LuciusWhite
+  " let g:airline_theme='sol'
+endif
+
+" ==================== Wild settings ====================
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+set wildignore+=*.so,*.pdf,*.png,*.jpg,*.gif,*.swf
+set wildignore+=*/tmp/*
+set wildignore+=*/log/*
+set wildignore+=*/vendor/*
+set wildignore+=*/spec/cassettes/*
+set wildignore+=*/public/assets/*
+set wildignore+=*/public/uploads/*
+
+" for go
+set wildignore+=*/Godeps/*
+
+" use the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" disabling auto insert of linebreaks when entering text
+" http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+set textwidth=0 wrapmargin=0
+
+
+
+" ==================== Commands ====================
+command! OpenFolder silent !open %:p:h
+command! Openfolder OpenFolder
+command! OpenInChrome silent !open % -a "Google Chrome"
+command! Openinchrome OpenInChrome
+command! MdViewer silent !open % -a "Marked 2"
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+command! Renamefile call RenameFile()
+
+function! PromoteToLet()
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+endfunction
+command! PromoteToLet :call PromoteToLet()
+
+function! ConvertHashRocket(line1, line2)
+  silent exec ':' . a:line1 . ',' . a:line2 .'s/://g'
+  silent exec ':' . a:line1 . ',' . a:line2 .'s/ *=> */: /g'
+endfunction
+command! -range ConvertHashRocket :call ConvertHashRocket(<line1>, <line2>)
+
+function! ConvertSymbolHashToStringRocket(line1, line2)
+  silent exec ':' . a:line1 . ',' . a:line2 .'s/: /" => /g'
+  silent exec ':' . a:line1 . ',' . a:line2 .'normal I"'
+endfunction
+command! -range ConvertSymbolHashToStringRocket :call ConvertSymbolHashToStringRocket(<line1>, <line2>)
+
+" source: http://stackoverflow.com/questions/1534835/how-do-i-close-all-buffers-that-arent-shown-in-a-window-in-vim
+function! DeleteInactiveBufs()
+    "From tabpagebuflist() help, get a list of all buffers in all tabs
+    let tablist = []
+    for i in range(tabpagenr('$'))
+        call extend(tablist, tabpagebuflist(i + 1))
+    endfor
+
+    "Below originally inspired by Hara Krishna Dara and Keith Roberts
+    "http://tech.groups.yahoo.com/group/vim/message/56425
+    let nWipeouts = 0
+    for i in range(1, bufnr('$'))
+        if bufexists(i) && !getbufvar(i,"&mod") && index(tablist, i) == -1
+        "bufno exists AND isn't modified AND isn't in the list of buffers open in windows and tabs
+            silent exec 'bwipeout' i
+            let nWipeouts = nWipeouts + 1
+        endif
+    endfor
+    echomsg nWipeouts . ' buffer(s) wiped out'
+endfunction
+command! BDAllInactive :call DeleteInactiveBufs()
+
+" ==================== Mappings ====================
+" make zm center horizontal
+:nnoremap zm zszH
+
+" delete buffer without closing window
+command! BD :bp|bd #
+nmap <silent> <leader>d :BD<CR>
+
+" use <c-c> where possible
+imap <c-c> <esc>
+let g:multi_cursor_quit_key='<c-c>'
+
+" quickly switch to alternate file (last buffer)
+nnoremap <leader><leader> <c-^>
+
+" expand directory of current active file
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" easier window traversal
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" use Very Nomagic Search Patterns by default
+nnoremap / /\V
+vnoremap / /\V
+nnoremap ? ?\V
+vnoremap ? ?\V
+
+nmap <LEFT> <C-w>h
+nmap <DOWN> <C-w>j
+nmap <UP> <C-w>k
+nmap <RIGHT> <C-w>l
+
+" faster movin
+nnoremap ∆ 4j
+nnoremap ˚ 4k
+
+" adding lines above / below cursor without moving (stolen from unimpaired)
+function! s:BlankUp(count) abort
+  put!=repeat(nr2char(10), a:count)
+  ']+1
+  silent! call repeat#set("\<Plug>myBlankUp", a:count)
+endfunction
+
+function! s:BlankDown(count) abort
+  put =repeat(nr2char(10), a:count)
+  ']-1
+  silent! call repeat#set("\<Plug>myBlankDown", a:count)
+endfunction
+
+nnoremap <silent> <Plug>myBlankUp    :<C-U>call <SID>BlankUp(v:count1)<CR>
+nnoremap <silent> <Plug>myBlankDown  :<C-U>call <SID>BlankDown(v:count1)<CR>
+
+nmap <Space>k <Plug>myBlankUp
+nmap <Space>j <Plug>myBlankDown
+
+nmap <Space>w :update<cr>
+
+nmap <silent> [t :tabp<cr>
+nmap <silent> ]t :tabn<cr>
+
+nmap <silent> [b :BufSurfBack<cr>
+nmap <silent> ]b :BufSurfForward<cr>
+
+" Remap redo
+nmap U <C-R>
+
+" Make Y consistent with D,C etc
+nnoremap Y y$
+
+" remap # to * for use with SearchHighlighting script
+nmap # *
+vmap # *
+
+" ==================== Git commit ====================
+" activates spelling correction and enters insert
+" mode when commiting
+if has('autocmd')
+  if has('spell')
+    au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+  endif
+  au BufNewFile,BufRead COMMIT_EDITMSG call feedkeys('ggA', 't')
+endif
+
+" ==================== Remove trailing whitespaces on save ====================
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+command! KillWhitespace call <SID>StripTrailingWhitespaces()
+
+autocmd FileType c,cpp,java,php,ruby,python,markdown autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" ==================== save file and create dirs if missing ====================
+function! WriteCreatingDirs()
+    execute ':silent !mkdir -p %:h'
+    write
+endfunction
+command! W call WriteCreatingDirs()
+
+" ==================== Filetypes ====================
+" In Makefiles, use real tabs, not tabs expanded to spaces
+au FileType make setlocal noexpandtab
+
+" go go
+au FileType go setlocal noexpandtab nolist softtabstop=4 tabstop=4 shiftwidth=4
+
+
+" Make sure all markdown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+au FileType markdown setlocal showbreak=\ \  wrap nolist
+
+" options for text
+au FileType text setlocal wrap nolist 
+
+" for rcmdnk/vim-mardown or plasticboy/vim-markdown
+let g:vim_markdown_initial_foldlevel=3
+
+" make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
+
+" read folder based vimrc files
+if filereadable(".vimrc.local")
+  so .vimrc.local
+endif
+
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 noexpandtab nolist

@@ -1,0 +1,63 @@
+# vim: filetype=sh
+
+alias ll='ls -lhG'
+alias l='ls -lhG'
+alias lt='ls -lhGrt'
+alias la='ls -lhA'
+alias lat='ls -lhAtr'
+
+# ======== Programme ========
+export EDITOR="vim"
+
+# ======== Folders ========
+alias df='cd ~/dotfiles'
+
+
+# ====== zeug
+alias kw='date +%V'
+
+httpload() {
+    STAMP=`date +"%s"`;
+    echo "http://$1" > /var/tmp/$STAMP.http_load_temp_file
+    http_load -parallel $2 -seconds $3 /var/tmp/$STAMP.http_load_temp_file
+    rm -f /var/tmp/$STAMP.http_load_temp_file
+}
+
+phpserver() {
+    php -S localhost:$1
+}
+
+alias curlstatus='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
+
+curl_time() {
+    curl -so /dev/null -w "\
+   namelookup:  %{time_namelookup}s\n\
+      connect:  %{time_connect}s\n\
+   appconnect:  %{time_appconnect}s\n\
+  pretransfer:  %{time_pretransfer}s\n\
+     redirect:  %{time_redirect}s\n\
+starttransfer:  %{time_starttransfer}s\n\
+-------------------------\n\
+        total:  %{time_total}s\n" "$@"
+}
+
+# use fasd for quick switching (z for cding, ,path in commands to autocomplete fuzzy: "vim ,sh" -> "vim ~/dotfiles/shared_shell"
+eval "$(fasd --init auto)"
+
+# use fzf for c-r completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# https://langui.sh/2014/03/10/wunused-command-line-argument-hard-error-in-future-is-a-harsh-mistress/
+export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future"
+
+alias prettyjson='python -m json.tool'
+
+# ======== PATHs ========
+export PATH=$PATH:/opt/local/bin
+export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:/Users/jaap.groeneveld/ownCloud/bin"
+
+export MANPATH=$MANPATH:/opt/local/share/man
+export INFOPATH=$INFOPATH:/opt/local/share/info
+
+export PATH=$PATH:$HOME/bin
