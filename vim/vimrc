@@ -1,2 +1,4 @@
 set nocompatible                  " Must come first because it changes other options.
-source ~/dotfiles/vim/vimrc_leightweight
+set encoding=utf-8
+
+source ~/dotfiles/vim/vimrc_lightweight
