@@ -3,4 +3,5 @@
 
 source $HOME/dotfiles/shell_envs/base
 source $HOME/dotfiles/shell_envs/git
+source $HOME/dotfiles/shell_envs/knowledge_base
 

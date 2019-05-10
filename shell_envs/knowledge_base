@@ -1,0 +1,17 @@
+alias kb='dnote v'
+
+function kba {
+  if [[ $# > 0 ]]; then
+    dnote add $(dnote v | cut -d" " -f4 | fzf) -c "$@"
+  else
+    dnote add $(dnote v | cut -d" " -f4 | fzf)
+  fi
+}
+
+function kbv {
+  if [[ $# > 0 ]]; then
+    dnote v $@
+  else
+    dnote v $(dnote v | cut -d" " -f4 | fzf)
+  fi
+}
