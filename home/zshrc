@@ -39,7 +39,7 @@ DISABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git osx)
-plugins=(alias-tips)
+plugins=(alias-tips ssh-agent)
 
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
