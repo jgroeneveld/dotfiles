@@ -60,3 +60,7 @@ setopt no_share_history
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jgroeneveld/.sdkman"
+[[ -s "/Users/jgroeneveld/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jgroeneveld/.sdkman/bin/sdkman-init.sh"
