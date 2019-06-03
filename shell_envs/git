@@ -14,6 +14,7 @@ alias gtags='git for-each-ref --sort="-*authordate" --format="%(tag) - %(taggerd
 alias gretag='git for-each-ref --sort="-*authordate" --format="# %(tag)%0a%(contents)" refs/tags --count=1 | vipe | git tag $(git describe --abbrev=0 --tags) -f -F -' # vipe is part of moreutils, this alias opens editor and changes last tag message
 # fuzzy (fzf) helper
 alias gcob='gco $(git branch -a | fzf)'
+alias gcotb='gco -t $(git branch -a | fzf)'
 alias gb='git branch -a | fzf'
 
 function g {
