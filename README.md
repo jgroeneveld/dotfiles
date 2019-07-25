@@ -57,7 +57,7 @@ go get
   - goimports
   - nsf/gocode
   - godef
-
+  - jiq https://github.com/fiatjaf/jiq
 
 brew install httpie (http cli - curl replacement)
 	https://github.com/jakubroztocil/httpie/blob/master/README.rst
